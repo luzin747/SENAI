@@ -40,8 +40,8 @@ public class Carro extends Veiculo {
 
 	@Override
 	public String toString() {
-		return "Carro [tipo=" + tipo + ", passageiros=" + passageiros + ", getTipo()=" + getTipo()
-				+ ", getPassageiros()=" + getPassageiros() + "]";
+		return "Carro \nTipo: " + getTipo() 
+				+ "\nPassageiros: " + getPassageiros() + "" + super.toString();
 	}
 
 }

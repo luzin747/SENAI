@@ -5,21 +5,23 @@ import java.util.Scanner;
 
 import modelo.Funcionario;
 import modelo.Cliente;
+import modelo.Vendas;
 
 public class Menu {
 
 	private static Scanner entrada = new Scanner(System.in);
 	private static ArrayList<Funcionario> funcionarios = new ArrayList<>();
 	private static ArrayList<Cliente> clientes = new ArrayList<>();
+	private static ArrayList<Vendas> vendas = new ArrayList<>();
 
 	public static void main(String[] args) {
 
 		int menu = 0;
 
-		while (menu != 5) {
+		while (menu != 7) {
 			System.out.println("******************* Escolha uma Opção *******************");
 			System.out.println(
-					"\n1.Cadastrar Funcionário \n2.Cadastrar Cliente \n3.Listar Funcinário  \n4.Listar Cliente  \n5.Cadastrar Vendas \n6.Listar Vendas 7.Sair!");
+					"\n1.Cadastrar Funcionário \n2.Cadastrar Cliente \n3.Listar Funcinário  \n4.Listar Cliente  \n5.Cadastrar Vendas \n6.Listar Vendas \n7.Sair!");
 			menu = entrada.nextInt();
 
 			switch (menu) {
@@ -35,12 +37,11 @@ public class Menu {
 			case 4:
 				litarCliente();
 				break;
-
 			case 5:
-
+				cadastrarVendas();
 				break;
 			case 6:
-
+				listarVendas();
 				break;
 
 			case 7:
@@ -53,6 +54,29 @@ public class Menu {
 
 			}
 		}
+	}
+
+	private static void listarVendas() {
+		for (Vendas vend : vendas) {
+			System.out.println(vend.toString());
+		}
+
+	}
+
+	private static void cadastrarVendas() {
+		System.out.println("*********** Cadastrar VENDAS ***********");
+		System.out.println("\nCódigo Cliente: \tCódigo Funcionário:\tValor");
+		Vendas venda = new Vendas(entrada.nextInt(), entrada.nextInt(), entrada.nextDouble());
+		vendas.add(venda);
+
+		System.out.println("\n\n-------------- [VENDAS CADASTRADAS] --------------");
+
+		for (Funcionario funcionario : funcionarios) {
+			if (funcionario.getMatricula() == venda.getCodFunc()) {
+				System.out.println("Valor da comissão: " + funcionario.calcComissao(venda.getValor()));
+			}
+		}
+
 	}
 
 	private static void litarCliente() {

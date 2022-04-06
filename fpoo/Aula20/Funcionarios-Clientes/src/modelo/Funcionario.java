@@ -30,11 +30,15 @@ public class Funcionario extends Pessoas {
 	public void setComissao(double comissao) {
 		this.comissao = comissao;
 	}
+	
+	public double calcComissao(double valor) {
+		return valor * comissao / 100;
+	}
 
 	@Override
 	public String toString() {
-		return "\n ----- Listando Funcionário ----- \nNome:" + getNome() + "\nTelefone: " + getTelefone() + " \nMatricula: " + matricula + "\nNascimento: "
-				+ getNascimento() + "\nComissao: " + comissao + " ";
+		return "\n ----- Listando Funcionário ----- \nNome:" + getNome() + "\nTelefone: " + getTelefone() + " \nMatricula: " + getMatricula() + "\nNascimento: "
+				+ getNascimento() + "\nComissao: " + getComissao() + " ";
 	}
 
 }

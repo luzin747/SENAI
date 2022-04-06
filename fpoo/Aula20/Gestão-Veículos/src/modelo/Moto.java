@@ -1,6 +1,6 @@
 package modelo;
 
-public class Moto extends Veiculo{
+public class Moto extends Veiculo {
 
 	private int cilindradas;
 
@@ -11,25 +11,20 @@ public class Moto extends Veiculo{
 	public void setCilindradas(int cilindradas) {
 		this.cilindradas = cilindradas;
 	}
-	
+
 	public void Moto() {
-		
+
 	}
 
-	public Moto(int cilindradas, int anoModelo, int anoFabricacao, String modelo, String marca, double valor,
-			String placa) {
-
+	public Moto(int anoModelo, int anoFabricacao, String modelo, String marca, double valor, String placa,
+			int cilindradas) {
+		super(anoModelo, anoFabricacao, modelo, marca, valor, placa);
 		this.cilindradas = cilindradas;
-		this.setAnoFabricacao(anoFabricacao);
-		this.setAnoModelo(anoModelo);
-		this.setMarca(marca);
-		this.setModelo(modelo);
-		this.setPlaca(placa);
-		this.setValor(valor);
+
 	}
 
 	@Override
 	public String toString() {
-		return "Moto [cilindradas=" + cilindradas + ", getCilindradas()=" + getCilindradas() + "]";
+		return "Moto \nCilindradas: " + getCilindradas() + super.toString();
 	}
 }

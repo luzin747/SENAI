@@ -8,6 +8,20 @@ public class Veiculo {
 	private String marca;
 	private double valor;
 	private String placa;
+	
+	
+	public Veiculo(){
+		
+	}
+	
+	public Veiculo(int anoModelo,int anoFabricacao,String modelo,String marca,double valor,String placa) {
+		this.anoFabricacao = anoFabricacao;
+		this.anoModelo = anoModelo;
+		this.marca = marca;
+		this.modelo = modelo;
+		this.placa = placa;
+		this.valor = valor;
+	}
 
 	public String getPlaca() {
 		return placa;
@@ -59,10 +73,9 @@ public class Veiculo {
 
 	@Override
 	public String toString() {
-		return "Veiculo [anoModelo=" + anoModelo + ", anoFabricacao=" + anoFabricacao + ", modelo=" + modelo
-				+ ", marca=" + marca + ", valor=" + valor + ", placa=" + placa + ", getPlaca()=" + getPlaca()
-				+ ", getAnoModelo()=" + getAnoModelo() + ", getAnoFabricacao()=" + getAnoFabricacao() + ", getModelo()="
-				+ getModelo() + ", getMarca()=" + getMarca() + ", getValor()=" + getValor() + "]";
+		return "\nPlaca: " + getPlaca()
+				+ "\nAno Modelo: " + getAnoModelo() + "\nAno Fabricacao: " + getAnoFabricacao() + "\nModelo: "
+				+ getModelo() + "\nMarca: " + getMarca() + "\nValor: " + getValor() + " ";
 	}
 	
 	
