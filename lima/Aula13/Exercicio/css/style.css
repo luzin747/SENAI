@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins';
+    
+}
+
+body {
+    display: grid;
+    grid-template-rows: repeat(3,25vh);
+    grid-template-columns: 20vw 20vw 20vw;
+    grid-template-areas: "h1 h2 h3" "m1 m2 m3" "f1 f2 f3";
+    margin-left: 20%;
+    margin-top: 5%;
+    
+}
+
+hr {
+    position: absolute;
+    top: 49%;
+
+    width: 60%;
+    border: 3px solid black;
+    transform: rotate(34deg);
+}
+
+.h1 {
+    
+    padding-left: 40%;
+    padding-top: 12%;
+    font-size: 100pt;
+    height: 100%;
+    grid-area: h1;
+    border-right: 1px solid black;
+   
+}
+.h2 {
+    
+    padding-left: 40%;
+    padding-top: 12%;
+    font-size: 100pt;
+    height: 100%;
+    grid-area: h2;
+    
+    
+}
+.h3{
+    padding-left: 40%;
+    padding-top: 12%;
+    font-size: 100pt;
+    border-left: 1px solid black;
+    height: 100%;
+    grid-area: h3;
+}
+
+
+
+.m1 {
+    
+    padding-left: 40%;
+    padding-top: 12%;
+    font-size: 100pt;
+
+    height: 100%;
+    grid-area: m1;
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+    
+}
+
+.m2 {
+    
+    padding-left: 40%;
+    padding-top: 12%;
+    font-size: 100pt;
+
+    height: 100%;
+    grid-area: m2;
+    
+    border-top: 1px solid black;
+}
+
+.m3{
+    padding-left: 40%;
+    padding-top: 12%;
+    font-size: 100pt;
+
+    height: 100%;
+    grid-area: m3;
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+}
+
+.f1 {
+   padding-left: 40%;
+    padding-top: 12%;
+    font-size: 100pt;
+
+    height: 100%;
+    grid-area: f1;
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+}
+.f2 {
+   padding-left: 40%;
+    padding-top: 12%;
+    font-size: 100pt;
+
+    height: 100%;
+    grid-area: f2;
+    border-top: 1px solid black;
+   
+}
+.f3{
+    padding-left: 40%;
+    padding-top: 12%;
+    font-size: 100pt;
+
+    height: 100%;
+    grid-area: f3;
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+}
+

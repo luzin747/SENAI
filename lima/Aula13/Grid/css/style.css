@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: grid;
+    grid-template-rows: repeat(4,25vh);
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "h h" "n m" "f f";
+}
+
+header {
+    background-color: rgb(179, 70, 70);
+    height: 100%;
+    grid-area: h;
+}
+
+nav {
+    height: 100%;
+    grid-area: n;
+    background-color: brown;
+}
+
+main {
+    height: 100%;
+    grid-area: m;
+    background-color: red;
+}
+
+footer {
+    background-color: rgb(71, 28, 28);
+    height: 100%;
+    grid-area: f;
+}

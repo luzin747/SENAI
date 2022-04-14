@@ -1,8 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+    
 }
 
 h1 {
@@ -11,6 +13,7 @@ h1 {
     margin-top: 20px;
     margin-left: 15px;
     font-weight: 300;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 #container {
@@ -25,27 +28,90 @@ h1 {
     justify-content: space-between;
     padding: 0px 50px 0px 15px;
     font-size: 14pt;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 
 .header h2 {
     font-size: 23pt;
     font-weight: 200;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .header a {
     color: blue;
 }
 
+.last {
+    list-style: none;
+    display: flex;
+    font-weight: 200;
+    margin-right: 30px;
+    font-weight: 500;
+
+}
+
+.last p {
+    padding-left: 20px;
+    font-size: 14pt;
+}
+.nav-cont  {
+    font-family: 'Poppins';
+    display: flex;
+    background-color: #718591dd;
+    
+    align-items: center;
+    color: rgba(255, 255, 255, 0.83);
+    justify-content: space-between;
+
+}
 .nav {
+    
     display: flex;
     list-style: none;
-    background-color: #62727A;
+    align-items: center;
+    padding-top: 10px;
+    
 }
 .nav li {
     padding-left: 20px;
-    font-size: 25pt;
+    margin-top: -10px;
+    color: rgba(255, 255, 255, 0.83);
+    font-size: 15pt;
+    
+    font-weight: 200;
+   
 }
 .nav li i {
    font-size: 25pt;
+   
+}
+
+.cont2{
+    background-image: url(../img/paisagem.jpg);
+    background-size: contain;
+    height: 77vh;
+}
+
+
+.icons {
+    justify-content: center;
+    list-style: none;
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.292);
+    width: 45%;
+    margin: 48% auto;
+    border-radius: 20px;
+    padding-right: 50px;
+    
+    
+}
+
+.icons img {
+    
+    margin-left: 35px;
+    margin-top: 10px;
+    width: 50px;
+    
+
 }

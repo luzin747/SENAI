@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+    font-family: 'Poppins';
+}
+
+body {
+    background: #e0e0e0;
+    background-image: url(../img/icons/Gráfico_de_linha_cruzado_2+pt-BR.png) ;
+    background-repeat: no-repeat;
+    background-size:  125vh ;
+    background-position: 94.2% 78.9%;
+
+}
+
+.menu ul {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    padding: 5px;
+    align-items: center;
+    margin: 0px 0px 0px 0px;
+    background-color: #404853;
+    color: rgba(255, 255, 255, 0.738);
+    font-size: 15pt;
+}
+
+.menu ul img {
+    margin: 10px 0px 0px 10px;
+}
+
+.li-text {
+    margin-left: -40%;
+}
+
+.ul02 a {
+    color: rgba(255, 255, 255, 0.738);
+    text-decoration: none;
+}
+
+.ul02 li {
+    padding: 20px;
+    padding-left: 30px;
+
+}
+
+.ul02 a:hover {
+    color: white;
+}
+
+.ul02 li:last-child {
+    padding-right: 40px;
+}
+
+.ul02 li i {
+    font-size: 17pt;
+}
+
+.cont-block1 {
+    background-color: white;
+    width: 26.2%;
+    height: 20%;
+    padding: 50px;
+    margin: 30px;
+    box-shadow: 0px 0px 5px rgba(0,0,0,.5);
+    
+}
+
+.cont-block1 h2 {
+    color: rgba(0, 0, 0, 0.617);
+}
+
+.cont-block1 hr {
+    margin-bottom: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.124);
+}
+
+.block-caption {
+    display: grid;
+    width: 40%;
+    margin-bottom: 10px;
+}
+.block-caption:last-child {
+  
+}
+
+.block-caption p {
+    font-weight: 550;
+}
+
+.block-caption span {
+    border: 1px solid rgba(0, 0, 0, 0.243);
+    padding: 5px;
+    margin-bottom: 1px;
+    margin-left: 10px;
+    padding-left: 10px;
+}
+
+.block-caption input {
+    font-weight: 900;
+    padding-left: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.243);
+    margin-left: 10px;
+    height: 30px;
+    width: 400px;
+    margin-bottom: -0%;
+}
+
+.container-01 {
+    display: flex;
+    
+}
+.cont-bloc2 {
+    display: flex;
+    
+    height: 10px;
+
+    width: 58%;
+    margin-left: 2px;
+    margin-top: 12px;
+    
+}
+
+.grid {
+    display: grid;
+    grid-template-rows: repeat(2, 15.6vh);
+    grid-template-columns: repeat(5, 12vw);
+    grid-template-areas: "e1 e2" "f2 f2" "c1 c2";
+   
+    
+
+}
+.grid div {
+    margin-top: 20px;
+    margin-left: 3px;
+    color: white;
+    font-size: 12pt;
+    padding-left: 14px;
+    padding-top: 10px;
+    
+}
+.grid p {
+    font-size: 22pt;
+    font-weight: 600;
+}
+.grid i {
+    margin-left: 89%;
+    margin-top: 27px;
+}
+.e1 {
+    background-color: #3AA2EB;
+}
+.e2 {
+    background-color: #52C0BF;
+}
+.f1 {
+    background-color: #F49E3F;
+}
+.f2 {
+    background-color: #EE6183;
+}
+
+.g1 i {
+    font-size: 20pt;
+    margin-top: 8%;
+    color: black;
+    margin-left: 5%;
+}
+
+.grid-2 {
+    display: grid;
+    grid-template-rows: repeat(4, 12.1vh);
+    grid-template-columns: 16vw 15.5vw;
+    grid-template-areas: "a1 a2" "b2 b2" "c1 c2";
+
+}
+
+.grid-2 {
+    margin-left: 30px;
+    margin-top: -20px;
+}
+
+.grid-2 div {
+    margin: 2px;
+    font-size: 14pt;
+    color: white;
+    font-weight: 400;
+    padding-left: 10px;
+}
+
+.grid-2 div p {
+    text-align: end;
+    margin-right: 10px;
+    margin-top: 20px;
+    font-size: 35pt;
+    font-weight: 800;
+}
+
+.a1 {
+    background-color: #5984F4;
+
+}
+
+.a2 {
+    background-color: #5984F4;
+
+}
+
+.b1 {
+    background-color: #5984F4;
+}
+
+.b2 {
+    background-color: #5984F4;
+}
+
+.c1 {
+    background-color: #5984F4;
+}
+
+.c2 {
+    background-color: #5984F4;
+}
+
+.d1 {
+    background-color: #5984F4;
+}
+
+.d2 {
+    background-color: #5984F4;
+}
+
+.backgroud-img {
+    
+}
+
+
