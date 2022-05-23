@@ -1,0 +1,4 @@
+INDEX VERSION 1.131+D:\Luiz1DES\Projetos\Java\Prova-Java\.metadata\.plugins\org.eclipse.jdt.core
+1865797976.index
+3900526464.index
+2270780803.index

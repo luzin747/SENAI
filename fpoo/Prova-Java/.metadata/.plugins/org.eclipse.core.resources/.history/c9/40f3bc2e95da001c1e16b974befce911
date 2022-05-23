@@ -1,0 +1,265 @@
+package visao;
+
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JPasswordField;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.JTextField;
+import javax.swing.table.DefaultTableModel;
+
+import controle.ManutencaoProcessa;
+import modelo.Manutencao;
+import uteis.Cripto;
+
+public class FormManutencoes extends JFrame implements ActionListener {
+
+	private static final long serialVersionUID = 1L;
+	private JPanel painel;
+	private JLabel title, lbID, lbData, lbEquipamento,lbCusto, lbtempo,lbtotal;
+	private JTextField tfID, tfData,tfCusto, tftempo,tftotal;
+	private JComboBox<String> cbEquipamento;
+	private JButton create, read, update, delete;
+	private JScrollPane scroll;
+	private JTable table;
+	private DefaultTableModel tableModel;
+	private int indice = -1;
+
+	FormManutencoes() {
+		
+		// Propriedades B�sicas
+		setTitle("Gerenciamento de usuários");
+		setBounds(300, 200, 670, 520);
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		painel = new JPanel(); // Painel de elementos
+		setContentPane(painel); // Configua o painel
+		setLayout(null);
+		
+		title = new JLabel("Cadastro de Manutenção");
+		title.setBounds(130,20,1000,30);
+		title.setFont( new Font("Arial", Font.BOLD, 35));
+		
+		painel.add(title);
+
+		// Textos e Bot�es
+		lbID = new JLabel("ID:");
+		lbID.setBounds(60, 90, 100, 30);
+		lbID.setFont( new Font("Arial", Font.BOLD, 20));
+		painel.add(lbID);
+
+		lbData = new JLabel("Data:");
+		lbData.setBounds(50, 130, 100, 30);
+		lbData.setFont( new Font("Arial", Font.BOLD, 20));
+		painel.add(lbData);
+		
+		lbEquipamento = new JLabel("Equipamento:");
+		lbEquipamento.setBounds(20, 160, 200, 30);
+		lbEquipamento.setFont( new Font("Arial", Font.BOLD, 20));
+		painel.add(lbEquipamento);
+
+		lbCusto = new JLabel("Custo:");
+		lbCusto.setBounds(310, 83, 200, 30);
+		lbCusto.setFont( new Font("Arial", Font.BOLD, 20));
+		painel.add(lbCusto);
+		
+		lbtempo = new JLabel("Tempo:");
+		lbtempo.setBounds(300, 122, 200, 30);
+		lbtempo.setFont( new Font("Arial", Font.BOLD, 20));
+		painel.add(lbtempo);
+		
+		
+		
+		
+		//Text Field
+		
+		tfID = new JTextField();
+		tfID.setBounds(160, 90, 60, 30);
+		painel.add(tfID);
+
+		tfData = new JTextField();
+		tfData.setBounds(160, 125, 100, 30);
+		painel.add(tfData);
+		
+		cbEquipamento = new JComboBox<String>(new String[] {"Impressora", "Celular", "Laptop"});
+		cbEquipamento.setBounds(160, 160, 135, 30);
+		painel.add(cbEquipamento);
+		
+		tfCusto = new JTextField();
+		tfCusto.setBounds(380, 85, 150, 30);
+		painel.add(tfCusto);
+		
+		tftempo = new JTextField();
+		tftempo.setBounds(380, 122, 150, 30);
+		painel.add(tftempo);
+
+		create = new JButton("Cadastrar");
+		read = new JButton("Consultar");
+		update = new JButton("Alterar");
+		delete = new JButton("Excluir");
+
+		create.setBounds(40, 210, 120, 30);
+		read.setBounds(180, 210, 120, 30);
+		update.setBounds(320, 210, 120, 30);
+		delete.setBounds(460, 210, 120, 30);
+
+		painel.add(create);
+		painel.add(read);
+		painel.add(update);
+		painel.add(delete);
+
+		// Tabela de Professores (READ, UPDATE)
+		tableModel = new DefaultTableModel();
+		tableModel.addColumn("ID");
+		tableModel.addColumn("data");
+		tableModel.addColumn("Equipamento");
+		tableModel.addColumn("Custo da Hora");
+		tableModel.addColumn("Tempo");
+		if (ManutencaoProcessa.manutencoes.size() != 0) {
+			preencheTabela();
+		}
+		table = new JTable(tableModel);
+		table.setEnabled(false);
+		scroll = new JScrollPane(table);
+		scroll.setBounds(20, 255, 605, 215);
+		painel.add(scroll);
+
+		create.addActionListener(this);
+		read.addActionListener(this);
+		update.addActionListener(this);
+		delete.addActionListener(this);
+
+		update.setEnabled(false);
+		delete.setEnabled(false);
+
+	}
+
+	private void preencheTabela() {
+		int totLinhas = tableModel.getRowCount();
+		if (tableModel.getRowCount() > 0) {
+			for (int i = 0; i < totLinhas; i++) {
+				tableModel.removeRow(0);
+			}
+		}
+		for (Manutencao p : ManutencaoProcessa.manutencoes) {
+			tableModel.addRow(new String[] { String.format("%d", p.getId()), p.getData(), p.getEquipamento(), String.format("%.2f", p.getCustoHora()), String.format("%.2f", p.getTempoGasto()), String.format("%.2f", p.getTotal())});
+		}
+	}
+
+	private void limparCampos() {
+		tfID.setText("");
+		tfData.setText("");
+		tfCusto.setText("");
+		tftempo.setText("");
+	}
+
+	
+	private void create() { 
+		
+		//o IF  esta vendo se tem algum campo não preenchido
+		if (tfID.getText().length() != 0 && tfData.getText().length() != 0 && cbEquipamento.getText().length() != 0
+				&& tfCusto.getText().length() != 0 && tftempo.getText().length() != 0
+				&& tftotal.getText().length() != 0) {
+			
+			ManutencaoProcessa.manutencoes.add(new Manutencao(tfID, tfNomePet.getText(),
+					tfRaca.getText(), peso, tfNascimento.getText(), tfNomeDono.getText(), tfTelefone.getText()));
+			autoId++;
+			
+		}else {
+			JOptionPane.showMessageDialog(this, "Favor preencher todos os campos.");
+		}
+	}
+
+	private void read() {
+		String entrada = JOptionPane.showInputDialog(this, "Digite o Id da Manutenção:");
+		
+		boolean isNumeric = true;
+		if(entrada != null && !entrada.equals("")) {
+			for(int i = 0; i < entrada.length(); i++) {
+				if(!Character.isDigit(entrada.charAt(i))) {
+					isNumeric = false;
+				}
+			}
+		}else {
+			isNumeric = false;
+		}
+		
+		if(isNumeric) {
+			int id = Integer.parseInt(entrada);
+			
+			for (Manutencao manu : ManutencaoProcessa.manutencoes) {
+				if (manu.getId() == id) {
+					tfID.setText(String.format("%d", manu.getId()));
+					tfData.setText(manu.getData());
+					tfCusto.setText(String.format("%2.f", manu.getCustoHora()));
+					tftempo.setText(String.format("%2.f", manu.getTempoGasto()));
+					tftotal.setText(String.format("%2.f", manu.getId()));
+					create.setEnabled(false);
+					update.setEnabled(true);
+					delete.setEnabled(true);
+					ManutencaoProcessa.salvar();
+				}else {
+					JOptionPane.showMessageDialog(this, "Manutenção Não encontrada");
+				}
+			}
+			
+		}
+	}
+
+	private void update() {
+		if (tfID.getText().length() > 0 && new String(tfData.getPassword()).length() > 3) {
+		Manutencao user = new Manutencao(tfID.getText(), Cripto.encripta(new String(pfSenha.getPassword())));
+		ManutencaoProcessa.usuarios.set(indice, user);
+		ManutencaoProcessa.salvar();
+		preencheTabela();
+		limparCampos();
+		tfID.setEnabled(true);
+		create.setEnabled(true);
+		read.setEnabled(true);
+		update.setEnabled(false);
+		delete.setEnabled(false);
+		} else {
+		JOptionPane.showMessageDialog(this, "Preencha o email e a senha de no mínimo 4 dígitos");
+		}
+	}
+
+	private void delete() {
+		ManutencaoProcessa.manutencoes.remove(indice);
+		ManutencaoProcessa.salvar();
+		preencheTabela();
+		limparCampos();
+		tfID.setEnabled(true);
+		create.setEnabled(true);
+		read.setEnabled(true);
+		update.setEnabled(false);
+		delete.setEnabled(false);
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		if (e.getSource() == create) {
+			create();
+		}
+		if (e.getSource() == read) {
+			read();
+		}
+		if (e.getSource() == update) {
+			//update();
+		}
+		if (e.getSource() == delete) {
+			delete();
+		}
+	}
+	public static void main(String[] args) {
+	ManutencaoProcessa.carregar();
+	FormManutencoes login = new FormManutencoes();
+	login.setVisible(true);
+}
+}
