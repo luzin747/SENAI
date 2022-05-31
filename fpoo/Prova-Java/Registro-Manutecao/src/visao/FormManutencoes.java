@@ -26,7 +26,7 @@ public class FormManutencoes extends JFrame implements ActionListener {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel painel;
-	private JLabel title, lbID, lbData, lbEquipamento, lbCusto, lbtempo, lbtotal;
+	private JLabel title, linha, lbID, lbData, lbEquipamento, lbCusto, lbtempo;
 	private JTextField tfID, tfData, tfCusto, tftempo, tftotal;
 	private JComboBox<String> cbEquipamento;
 	private JButton create, read, update, delete;
@@ -39,7 +39,7 @@ public class FormManutencoes extends JFrame implements ActionListener {
 
 		// Propriedades B�sicas
 		setTitle("Gerenciamento de usuários");
-		setBounds(300, 200, 670, 520);
+		setBounds(800, 250, 670, 520);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		painel = new JPanel(); // Painel de elementos
 		setContentPane(painel); // Configua o painel
@@ -52,6 +52,12 @@ public class FormManutencoes extends JFrame implements ActionListener {
 		painel.add(title);
 
 		// Textos e Bot�es
+		
+		linha = new JLabel("_________________________________________________________");
+		linha.setBounds(15,35,660,30);
+		linha.setFont( new Font("", Font.BOLD, 20) );
+		painel.add(linha);
+		
 		lbID = new JLabel("ID:");
 		lbID.setBounds(60, 90, 100, 30);
 		lbID.setFont(new Font("Arial", Font.BOLD, 20));
@@ -87,7 +93,7 @@ public class FormManutencoes extends JFrame implements ActionListener {
 		tfData.setBounds(160, 125, 100, 30);
 		painel.add(tfData);
 
-		cbEquipamento = new JComboBox<String>(new String[] { "Impressora", "Celular", "Laptop" });
+		cbEquipamento = new JComboBox<String>(new String[] { "Impressora", "Celular", "Laptop", "Monitor", "Computador", "Videogame" });
 		cbEquipamento.setBounds(160, 160, 135, 30);
 		painel.add(cbEquipamento);
 
@@ -98,7 +104,7 @@ public class FormManutencoes extends JFrame implements ActionListener {
 		tftempo = new JTextField();
 		tftempo.setBounds(380, 122, 150, 30);
 		painel.add(tftempo);
-		
+
 		tftotal = new JTextField();
 		tftotal.setBounds(380, 164, 150, 30);
 		painel.add(tftotal);
@@ -126,6 +132,7 @@ public class FormManutencoes extends JFrame implements ActionListener {
 		tableModel.addColumn("Equipamento");
 		tableModel.addColumn("Custo da Hora");
 		tableModel.addColumn("Tempo");
+		tableModel.addColumn(("Total"));
 		if (ManutencaoProcessa.manutencoes.size() != 0) {
 			preencheTabela();
 		}
@@ -142,7 +149,7 @@ public class FormManutencoes extends JFrame implements ActionListener {
 
 		update.setEnabled(false);
 		delete.setEnabled(false);
-		
+
 		tfCusto.getDocument().addDocumentListener(new DocumentListener() {
 			public void changedUpdate(DocumentEvent e) {
 				warn();
@@ -161,12 +168,12 @@ public class FormManutencoes extends JFrame implements ActionListener {
 				try {
 					double custo = Double.parseDouble(tfCusto.getText().replace(",", "."));
 					double total = 0d;
-						if(tftempo.getText() != null) {
-							double tempo = Double.parseDouble(tftempo.getText().replace(",", "."));
-							total = tempo * custo;
-						} else {
-							tftotal.setText("Calculando...");
-						}
+					if (tftempo.getText() != null) {
+						double tempo = Double.parseDouble(tftempo.getText().replace(",", "."));
+						total = tempo * custo;
+					} else {
+						tftotal.setText("Calculando...");
+					}
 
 					tftotal.setText(String.format("%.2f", total));
 
@@ -181,7 +188,7 @@ public class FormManutencoes extends JFrame implements ActionListener {
 
 			}
 		});
-		
+
 		tftempo.getDocument().addDocumentListener(new DocumentListener() {
 			public void changedUpdate(DocumentEvent e) {
 				warn();
@@ -200,12 +207,12 @@ public class FormManutencoes extends JFrame implements ActionListener {
 				try {
 					double custo = Double.parseDouble(tfCusto.getText().replace(",", "."));
 					double total = 0d;
-						if(tftempo.getText() != null) {
-							double tempo = Double.parseDouble(tftempo.getText().replace(",", "."));
-							total = tempo * custo;
-						} else {
-							tftotal.setText("Calculando...");
-						}
+					if (tftempo.getText() != null) {
+						double tempo = Double.parseDouble(tftempo.getText().replace(",", "."));
+						total = tempo * custo;
+					} else {
+						tftotal.setText("Calculando...");
+					}
 
 					tftotal.setText(String.format("%.2f", total));
 
@@ -252,7 +259,7 @@ public class FormManutencoes extends JFrame implements ActionListener {
 			ManutencaoProcessa.manutencoes.add(new Manutencao(Integer.parseInt(tfID.getText()), tfData.getText(),
 					cbEquipamento.getSelectedItem().toString(), Double.parseDouble(tfCusto.getText()),
 					Double.parseDouble(tftempo.getText())));
-			
+
 			preencheTabela();
 			limparCampos();
 			ManutencaoProcessa.salvar();
@@ -261,95 +268,73 @@ public class FormManutencoes extends JFrame implements ActionListener {
 			JOptionPane.showMessageDialog(this, "Favor preencher todos os campos.");
 		}
 	}
-
-//	private void read() {
-//		String entrada = JOptionPane.showInputDialog(this, "Digite o Id da Manutenção:");
-//
-//		boolean isNumeric = true;
-//		if (entrada != null && !entrada.equals("")) {
-//			for (int i = 0; i < entrada.length(); i++) {
-//				if (!Character.isDigit(entrada.charAt(i))) {
-//					isNumeric = false;
-//				}
-//			}
-//		} else {
-//			isNumeric = false;
-//		}
-//
-//		if (isNumeric) {
-//			int id = Integer.parseInt(entrada);
-//
-//			for (Manutencao manu : ManutencaoProcessa.manutencoes) {
-//				if (manu.getId() == id) {
-//					tfID.setText(String.format("%d", manu.getId()));
-//					tfData.setText(manu.getData());
-//					tfCusto.setText(String.format("%2.f", manu.getCustoHora()));
-//					tftempo.setText(String.format("%2.f", manu.getTempoGasto()));
-//					tftotal.setText(String.format("%2.f", manu.getId()));
-//					create.setEnabled(false);
-//					update.setEnabled(true);
-//					delete.setEnabled(true);
-//					ManutencaoProcessa.salvar();
-//				} else {
-//					JOptionPane.showMessageDialog(this, "Manutenção Não encontrada");
-//				}
-//			}
-//
-//		}
-//	}
 	private void read() {
 		String text = JOptionPane.showInputDialog(this, "Digite o id do item");
 		try {
-		int id = Integer.parseInt(text);
+			int id = Integer.parseInt(text);
 
-		for (Manutencao m : ManutencaoProcessa.manutencoes) {
-		if (m.getId() == id) {
-		int indice = ManutencaoProcessa.manutencoes.indexOf(m);
-		tfID.setText(String.format("%d", ManutencaoProcessa.manutencoes.get(indice).getId()));
-		tfData.setText(ManutencaoProcessa.manutencoes.get(indice).getData());
-		cbEquipamento.setSelectedItem(ManutencaoProcessa.manutencoes.get(indice).getEquipamento());
-		tfCusto.setText((String.format("%.2f" , ManutencaoProcessa.manutencoes.get(indice).getCustoHora())));
-		tftempo.setText((String.format("%.2f", ManutencaoProcessa.manutencoes.get(indice).getTempoGasto())));
-		create.setEnabled(false);
-		update.setEnabled(true);
-		delete.setEnabled(true);
-		ManutencaoProcessa.salvar();
-		}
-		}
+			for (Manutencao m : ManutencaoProcessa.manutencoes) {
+				if (m.getId() == id) {
+					int indice = ManutencaoProcessa.manutencoes.indexOf(m);
+					tfID.setText(String.format("%d", ManutencaoProcessa.manutencoes.get(indice).getId()));
+					tfData.setText(ManutencaoProcessa.manutencoes.get(indice).getData());
+					cbEquipamento.setSelectedItem(ManutencaoProcessa.manutencoes.get(indice).getEquipamento());
+					tfCusto.setText((String.format("%.2f", ManutencaoProcessa.manutencoes.get(indice).getCustoHora())));
+					tftempo.setText(
+							(String.format("%.2f", ManutencaoProcessa.manutencoes.get(indice).getTempoGasto())));
+					create.setEnabled(false);
+					update.setEnabled(true);
+					delete.setEnabled(true);
+					ManutencaoProcessa.salvar();
+				}
+				else {
+					JOptionPane.showMessageDialog(this, "Id inválido!", "Erro", JOptionPane.ERROR_MESSAGE);
+				}
+			}
 		} catch (Exception e) {
-		JOptionPane.showMessageDialog(this, "Id inválido!", "Erro", JOptionPane.ERROR_MESSAGE);
+			JOptionPane.showMessageDialog(this, "Id inválido!", "Erro", JOptionPane.ERROR_MESSAGE);
 		}
 
+	}
+
+	private void alterar() {
+		if (tfCusto.getText().length() != 0 && tftempo.getText().length() != 0) {
+			int id = Integer.parseInt(tfID.getText());
+			Manutencao m;
+			for (Manutencao manutencao : ManutencaoProcessa.manutencoes) {
+				if(id == manutencao.getId()) {
+					m = manutencao;
+					indice = ManutencaoProcessa.manutencoes.indexOf(m);
+				}
+			}
+			ManutencaoProcessa.manutencoes.set(indice,
+					new Manutencao(Integer.parseInt(tfID.getText()), tfData.getText(),
+							cbEquipamento.getSelectedItem().toString(), (Double.parseDouble(tfCusto.getText().replace(",", "."))), (Double.parseDouble(tftempo.getText().replace(",", ".")))));
+
+			preencheTabela();
+			limparCampos();
+			ManutencaoProcessa.salvar();
+		} else {
+			JOptionPane.showMessageDialog(this, "Favor preencher todos os campos.");
 		}
+	}
 
-//	private void update() {
-//		if (tfID.getText().length() > 0 && new String(tfData.getPassword()).length() > 3) {
-//			Manutencao user = new Manutencao(tfID.getText(), Cripto.encripta(new String(pfSenha.getPassword())));
-//			ManutencaoProcessa.usuarios.set(indice, user);
-//			ManutencaoProcessa.salvar();
-//			preencheTabela();
-//			limparCampos();
-//			tfID.setEnabled(true);
-//			create.setEnabled(true);
-//			read.setEnabled(true);
-//			update.setEnabled(false);
-//			delete.setEnabled(false);
-//		} else {
-//			JOptionPane.showMessageDialog(this, "Preencha o email e a senha de no mínimo 4 dígitos");
-//		}
-//	}
-
-	private void delete() {
+	private void excluir() {
+		
 		int id = Integer.parseInt(tfID.getText());
-		Manutencao manutencao = new Manutencao(id);
-		int indice = ManutencaoProcessa.manutencoes.indexOf(manutencao);
+		Manutencao m;
+		for (Manutencao manutencao : ManutencaoProcessa.manutencoes) {
+			if(id == manutencao.getId()) {
+				m = manutencao;
+				indice = ManutencaoProcessa.manutencoes.indexOf(m);
+			}
+		}
 		ManutencaoProcessa.manutencoes.remove(indice);
 		preencheTabela();
 		limparCampos();
 		create.setEnabled(true);
 		update.setEnabled(false);
-		delete.setEnabled(true);
-		tfID.setText(String.format("%d",id));
+		delete.setEnabled(false);
 		ManutencaoProcessa.salvar();
 	}
 
@@ -362,10 +347,10 @@ public class FormManutencoes extends JFrame implements ActionListener {
 			read();
 		}
 		if (e.getSource() == update) {
-			// update();
+			alterar();
 		}
 		if (e.getSource() == delete) {
-			delete();
+			excluir();
 		}
 	}
 

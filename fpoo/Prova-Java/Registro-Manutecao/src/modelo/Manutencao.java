@@ -113,7 +113,7 @@ public class Manutencao {
 		return id + ";" + Data + ";" + equipamento + ";" +custoHora + ";"+ tempoGasto ;
 	}
 	public String toCSV() {
-		return id + ";" + Data + ";" + equipamento + ";" +custoHora + ";"+ tempoGasto ;
+		return id + ";" + Data + ";" + equipamento + ";" +custoHora + ";"+ tempoGasto + "\r\n" ;
 	}
 	
 	
