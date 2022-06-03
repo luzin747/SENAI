@@ -1,0 +1,25 @@
+Tamanho
+- Lan (local)
+- Wan (grande)
+
+Conexão
+- Guiada (cabo) : Fibra Ótica, Par Trançado, Coaxial.
+- Não guiada (Wire Less) : wifi, Bluetooth, NFC.
+
+Topologia ( Desenho Físico da Rede )
+-Estrela 
+-Anel
+-Barra
+
+Comando Principal = "ping"
+
+Camadas 
+4-Aplicação
+3-Transporte
+2-Internet
+1-Rede
+
+tpc - seguranca (t
+upt - rapido (discord)
+
+Broadcast ( Mensagem pra todo mundo )

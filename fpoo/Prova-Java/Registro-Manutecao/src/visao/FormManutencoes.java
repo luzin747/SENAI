@@ -10,7 +10,6 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.JPasswordField;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
@@ -20,7 +19,6 @@ import javax.swing.table.DefaultTableModel;
 
 import controle.ManutencaoProcessa;
 import modelo.Manutencao;
-import uteis.Cripto;
 
 public class FormManutencoes extends JFrame implements ActionListener {
 
@@ -52,12 +50,12 @@ public class FormManutencoes extends JFrame implements ActionListener {
 		painel.add(title);
 
 		// Textos e Bot�es
-		
+
 		linha = new JLabel("_________________________________________________________");
-		linha.setBounds(15,35,660,30);
-		linha.setFont( new Font("", Font.BOLD, 20) );
+		linha.setBounds(15, 35, 660, 30);
+		linha.setFont(new Font("", Font.BOLD, 20));
 		painel.add(linha);
-		
+
 		lbID = new JLabel("ID:");
 		lbID.setBounds(60, 90, 100, 30);
 		lbID.setFont(new Font("Arial", Font.BOLD, 20));
@@ -93,7 +91,8 @@ public class FormManutencoes extends JFrame implements ActionListener {
 		tfData.setBounds(160, 125, 100, 30);
 		painel.add(tfData);
 
-		cbEquipamento = new JComboBox<String>(new String[] { "Impressora", "Celular", "Laptop", "Monitor", "Computador", "Videogame" });
+		cbEquipamento = new JComboBox<String>(
+				new String[] { "Impressora", "Celular", "Laptop", "Monitor", "Computador", "Videogame" });
 		cbEquipamento.setBounds(160, 160, 135, 30);
 		painel.add(cbEquipamento);
 
@@ -268,6 +267,7 @@ public class FormManutencoes extends JFrame implements ActionListener {
 			JOptionPane.showMessageDialog(this, "Favor preencher todos os campos.");
 		}
 	}
+
 	private void read() {
 		String text = JOptionPane.showInputDialog(this, "Digite o id do item");
 		try {
@@ -286,8 +286,7 @@ public class FormManutencoes extends JFrame implements ActionListener {
 					update.setEnabled(true);
 					delete.setEnabled(true);
 					ManutencaoProcessa.salvar();
-				}
-				else {
+				} else {
 					JOptionPane.showMessageDialog(this, "Id inválido!", "Erro", JOptionPane.ERROR_MESSAGE);
 				}
 			}
@@ -302,14 +301,16 @@ public class FormManutencoes extends JFrame implements ActionListener {
 			int id = Integer.parseInt(tfID.getText());
 			Manutencao m;
 			for (Manutencao manutencao : ManutencaoProcessa.manutencoes) {
-				if(id == manutencao.getId()) {
+				if (id == manutencao.getId()) {
 					m = manutencao;
 					indice = ManutencaoProcessa.manutencoes.indexOf(m);
 				}
 			}
 			ManutencaoProcessa.manutencoes.set(indice,
 					new Manutencao(Integer.parseInt(tfID.getText()), tfData.getText(),
-							cbEquipamento.getSelectedItem().toString(), (Double.parseDouble(tfCusto.getText().replace(",", "."))), (Double.parseDouble(tftempo.getText().replace(",", ".")))));
+							cbEquipamento.getSelectedItem().toString(),
+							(Double.parseDouble(tfCusto.getText().replace(",", "."))),
+							(Double.parseDouble(tftempo.getText().replace(",", ".")))));
 
 			preencheTabela();
 			limparCampos();
@@ -320,11 +321,11 @@ public class FormManutencoes extends JFrame implements ActionListener {
 	}
 
 	private void excluir() {
-		
+
 		int id = Integer.parseInt(tfID.getText());
 		Manutencao m;
 		for (Manutencao manutencao : ManutencaoProcessa.manutencoes) {
-			if(id == manutencao.getId()) {
+			if (id == manutencao.getId()) {
 				m = manutencao;
 				indice = ManutencaoProcessa.manutencoes.indexOf(m);
 			}

@@ -1,0 +1,39 @@
+Qual padrão de placa de rede é mais rápido?
+- Gigabit Ethernet
+
+Qual o tipo de cabo mais utilizada em LANs atualmente?
+-Par Trançado
+
+Qual o nome do conector mais utilizado em cabos de redes locais?
+-RJ-45
+
+Qual a velocidade máxima alcançada por cabos pares trançados cat5e?
+-1000 Mbits
+
+Qual camada do modelo TCP/IP o padrão Ethernet se encontra
+-Rede/Física
+
+Para resolução de nomes em IPs utilizamos qual serviço?
+-21
+
+Para transferência de arquivos via internet utilizamos qual serviço?
+-FTP
+
+Para resolução de nomes em IPs utilizamos qual serviço?
+-DNS
+
+Ethernet, RJ45, Keystone, Path Panel - Camada de Rede
+HTTP, FTP, ISMTP, POP3 - Camada de Aplicação
+UDP, TCP - Camada de Transporte
+IP, ARP - Camada de Internet
+
+Marque as opções relacionadas
+
+www.google.com.br- DNS
+01-00-5e-00-00-fb - MAC
+128 bits - IPv6
+32 bits - IPv4
+
+Wi-Fi - Wireless
+LAN - Par-Trançado
+WAN - Fibra Óptica
