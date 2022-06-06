@@ -11,4 +11,6 @@
     <fullyQualifiedTypeName name="java.util.Locale"/>
     <fullyQualifiedTypeName name="java.lang.Boolean"/>
     <fullyQualifiedTypeName name="controle.OrcamentoProcessa"/>
+    <fullyQualifiedTypeName name="javax.swing.JTextArea"/>
+    <fullyQualifiedTypeName name="javax.swing.BorderFactory"/>
 </qualifiedTypeNameHistroy>

@@ -3,6 +3,10 @@ package visao;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -13,8 +17,6 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
-import javax.swing.event.DocumentEvent;
-import javax.swing.event.DocumentListener;
 import javax.swing.table.DefaultTableModel;
 
 import controle.OrcamentoProcessa;
@@ -75,16 +77,13 @@ public class OrcamentoForm extends JFrame implements ActionListener {
 		lbPreco.setBounds(320, 127, 200, 30);
 		lbPreco.setFont(new Font("Arial", Font.BOLD, 20));
 		painel.add(lbPreco);
-
-//		lbPreco = new JLabel("Tempo:");
-//		lbPreco.setBounds(300, 122, 200, 30);
-//		lbPreco.setFont(new Font("Arial", Font.BOLD, 20));
-//		painel.add(lbPreco);
-
+		
 		// Text Field
 
 		tfID = new JTextField();
 		tfID.setBounds(140, 90, 60, 30);
+		tfID.setText(""+calcId());
+		tfID.setEnabled(false);
 		painel.add(tfID);
 
 		tfFornecedor = new JTextField();
@@ -128,7 +127,7 @@ public class OrcamentoForm extends JFrame implements ActionListener {
 		table = new JTable(tableModel);
 		table.setEnabled(false);
 		scroll = new JScrollPane(table);
-		scroll.setBounds(20, 230, 605, 185);
+		scroll.setBounds(20, 230, 605, 220);
 		painel.add(scroll);
 
 		create.addActionListener(this);
@@ -138,57 +137,14 @@ public class OrcamentoForm extends JFrame implements ActionListener {
 
 		update.setEnabled(false);
 		delete.setEnabled(false);
-
-		/*
-		 * tfCusto.getDocument().addDocumentListener(new DocumentListener() { public
-		 * void changedUpdate(DocumentEvent e) { warn(); }
-		 * 
-		 * public void removeUpdate(DocumentEvent e) { warn(); }
-		 * 
-		 * public void insertUpdate(DocumentEvent e) { warn(); }
-		 * 
-		 * public void warn() {
-		 * 
-		 * try { double custo = Double.parseDouble(tfCusto.getText().replace(",", "."));
-		 * double total = 0d; if (tftempo.getText() != null) { double tempo =
-		 * Double.parseDouble(tftempo.getText().replace(",", ".")); total = tempo *
-		 * custo; } else { tftotal.setText("Calculando..."); }
-		 * 
-		 * tftotal.setText(String.format("%.2f", total));
-		 * 
-		 * } catch (Exception e) { if (tfCusto.getText().length() == 0) {
-		 * tftotal.setText(""); } else { tftotal.setText("Calculando..."); }
-		 * 
-		 * }
-		 * 
-		 * } });
-		 * 
-		 * tftempo.getDocument().addDocumentListener(new DocumentListener() { public
-		 * void changedUpdate(DocumentEvent e) { warn(); }
-		 * 
-		 * public void removeUpdate(DocumentEvent e) { warn(); }
-		 * 
-		 * public void insertUpdate(DocumentEvent e) { warn(); }
-		 * 
-		 * public void warn() {
-		 * 
-		 * try { double custo = Double.parseDouble(tfCusto.getText().replace(",", "."));
-		 * double total = 0d; if (tftempo.getText() != null) { double tempo =
-		 * Double.parseDouble(tftempo.getText().replace(",", ".")); total = tempo *
-		 * custo; } else { tftotal.setText("Calculando..."); }
-		 * 
-		 * tftotal.setText(String.format("%.2f", total));
-		 * 
-		 * } catch (Exception e) { if (tfCusto.getText().length() == 0) {
-		 * tftotal.setText(""); } else { tftotal.setText("Calculando..."); }
-		 * 
-		 * }
-		 * 
-		 * } });
-		 */
+		
 	}
+	
+	
 
 	private void preencheTabela() {
+		
+		
 		int totLinhas = tableModel.getRowCount();
 		if (tableModel.getRowCount() > 0) {
 			for (int i = 0; i < totLinhas; i++) {
@@ -196,10 +152,17 @@ public class OrcamentoForm extends JFrame implements ActionListener {
 			}
 		}
 		for (Orcamento o : OrcamentoProcessa.orcamentos) {
-			tableModel.addRow(new String[] { String.format("%d", o.getId()), o.getFornecedor(), o.getProduto(),
-					String.format("%.2f", o.getPreco()), String.format("", o.isMaisBarato())});
+			if(o.isMaisBarato()) {
+				tableModel.addRow(new String[] { String.format("%d", o.getId()), o.getFornecedor(), o.getProduto(),
+						String.format("%.2f", o.getPreco()),"Dá Pra Comprar"});
+			}else {
+				tableModel.addRow(new String[] { String.format("%d", o.getId()), o.getFornecedor(), o.getProduto(),
+						String.format("%.2f", o.getPreco()),"Não Compra"});
+			}
+			
 		}
 	}
+
 
 	private void limparCampos() {
 		tfID.setText("");
@@ -210,23 +173,25 @@ public class OrcamentoForm extends JFrame implements ActionListener {
 	private void create() {
 
 		// o IF esta vendo se tem algum campo não preenchido
-		if (tfID.getText().length() != 0 && tfFornecedor.getText().length() != 0 && tfPreco.getText().length() != 0) {
-
-			OrcamentoProcessa.orcamentos.add(new Orcamento(Integer.parseInt(tfID.getText()), tfFornecedor.getText(),
-					cbProduto.getSelectedItem().toString(), Double.parseDouble(tfPreco.getText()), false));
-
-			preencheTabela();
-			limparCampos();
-			OrcamentoProcessa.salvar();
-			
-//			for (OrcamentoProcessa o : orcamentos) {
-//				
-//			}
-
-		} else {
-			JOptionPane.showMessageDialog(this, "Favor preencher todos os campos.");
-		}
 		
+		
+			
+			if (tfID.getText().length() != 0 && tfFornecedor.getText().length() != 0 && tfPreco.getText().length() != 0) {
+
+				OrcamentoProcessa.orcamentos.add(new Orcamento(Integer.parseInt(tfID.getText()), tfFornecedor.getText(),
+						cbProduto.getSelectedItem().toString(), Double.parseDouble(tfPreco.getText()), false));
+				comprar();
+				preencheTabela();
+				limparCampos();
+				OrcamentoProcessa.salvar();
+				
+				
+
+			} else {
+				JOptionPane.showMessageDialog(this, "Favor preencher todos os campos.");
+			}
+		
+		tfID.setText(""+calcId());
 		
 	}
 
@@ -247,7 +212,10 @@ public class OrcamentoForm extends JFrame implements ActionListener {
 					create.setEnabled(false);
 					update.setEnabled(true);
 					delete.setEnabled(true);
+					comprar();
+					
 					OrcamentoProcessa.salvar();
+					
 				} 
 			
 			}
@@ -257,6 +225,7 @@ public class OrcamentoForm extends JFrame implements ActionListener {
 		} catch (Exception e) {
 			JOptionPane.showMessageDialog(this, "Id inválido!", "Erro", JOptionPane.ERROR_MESSAGE);
 		}
+		
 
 	}
 
@@ -274,13 +243,17 @@ public class OrcamentoForm extends JFrame implements ActionListener {
 					new Orcamento(Integer.parseInt(tfID.getText()), tfFornecedor.getText(),
 							cbProduto.getSelectedItem().toString(), Double.parseDouble(tfPreco.getText().replace(",", ".")), false));
 							
-
+			comprar();
 			preencheTabela();
 			limparCampos();
+			create.setEnabled(true);
+			update.setEnabled(false);
+			delete.setEnabled(false);
 			OrcamentoProcessa.salvar();
 		} else {
 			JOptionPane.showMessageDialog(this, "Favor preencher todos os campos.");
 		}
+		
 	}
 
 	private void excluir() {
@@ -300,6 +273,14 @@ public class OrcamentoForm extends JFrame implements ActionListener {
 		update.setEnabled(false);
 		delete.setEnabled(false);
 		OrcamentoProcessa.salvar();
+		comprar();
+		
+	}
+	
+	public void comprar() {
+		for (Orcamento orcamento : OrcamentoProcessa.orcamentos) {
+			OrcamentoProcessa.compararProdutos(orcamento.getProduto());
+			}
 	}
 
 	@Override
@@ -317,7 +298,22 @@ public class OrcamentoForm extends JFrame implements ActionListener {
 			excluir();
 		}
 	}
+	
+//	public static void leitor(File path)throws IOException{
+//		BufferedReader buffReade = new BufferedReader(new FileReader(path));
+//		String linha = "";
+//		StringBuilder sb;
+//		int i = 1;
+//		while(true) {
+//			linha.buffRead.readLine();
+//			
+//		}
+//	}
 
+	public static int calcId() {
+		return OrcamentoProcessa.orcamentos.get(OrcamentoProcessa.orcamentos.size()-1).getId()+1;
+	}
+	
 	public static void main(String[] args) {
 		OrcamentoProcessa.carregar();
 		OrcamentoForm login = new OrcamentoForm();

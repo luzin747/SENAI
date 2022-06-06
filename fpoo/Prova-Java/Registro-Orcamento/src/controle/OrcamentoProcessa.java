@@ -21,20 +21,20 @@ public class OrcamentoProcessa {
 		int indexBarato = 0;
 		double precoBarato = 9999999;
 		for (Orcamento orcamento : orcamentos) {
-			if (orcamento.getProduto() == produto && orcamento.getPreco() < precoBarato) {
+			if (orcamento.getProduto().equals(produto) && orcamento.getPreco() < precoBarato) {
 				indexBarato = orcamentos.indexOf(orcamento);
 				precoBarato = orcamento.getPreco();
 			}
 		}
-
+		
 		for (Orcamento orcamento : orcamentos) {
 			if (orcamentos.indexOf(orcamento) == indexBarato) {
 				orcamento.setMaisBarato(true);
-			} else if (orcamento.getProduto() == produto) {
+			} else if(orcamento.getProduto() == produto) {
 				orcamento.setMaisBarato(false);
 			}
 		}
-
+		
 	}
 
 }

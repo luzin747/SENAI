@@ -80,7 +80,9 @@ public class Orcamento {
 	}
 
 	public void setMaisBarato(boolean maisBarato) {
-		this.maisBarato = maisBarato;
+		this.maisBarato =  maisBarato;
+		
+		
 	}
 
 	@Override
