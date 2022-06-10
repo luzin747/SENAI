@@ -1,0 +1,115 @@
+Cabo Mais Utilizado = Par Trançado
+Padrão Mais Rápido = Gigabite
+
+Melhor Cabo = Fibra Ótica.
+
+Cabo Par Trançado usa Conexão RJ45
+
+Cabo Coaxil VANTAGEM = Contra Interferencia Eletromagnética Com grande Distancia;
+
+
+Elétromagnetismo = 
+
+Tamanho
+- Lan (local)
+- Wan (grande)
+
+Conexão
+- Guiada (cabo) : Fibra Ótica, Par Trançado, Coaxial.
+- Não guiada (Wire Less) : wifi, Bluetooth, NFC.
+
+Topologia ( Desenho Físico da Rede )
+-Estrela 
+-Anel
+-Barra
+
+Comando Principal = "ping"
+
+Camadas 
+4-Aplicação
+3-Transporte
+2-Internet
+1-Rede
+
+tpc - seguranca (t
+upt - rapido (discord)
+
+Broadcast ( Mensagem pra todo mundo )
+
+192.168.258.32 Teste: este endereço É ou não É um endereço IPv4.
+192.168.253.134 Este é um endereço IP, por que o de cima não é?
+RESPOSTA: Porque um dos octetos é maior do que 255*
+
+As máscaras seguem as mesmas regras dos endereços IPv4
+Porém servem para identificar as SubRedes.
+
+255.255.255.0 = /24 = Classe C
+11111111.11111111.11111111.00000000
+255.255.0.0 = /16 = Classe B
+11111111.11111111.00000000.00000000
+255.0.0.0 = /8 = Classe A
+11111111.00000000.00000000.00000000
+
+------- Máscara de subrede --------
+255 identifica a rede
+0 identifica os hosts
+
+Como escrever as máscaras
+Classe A /8 = 11111111.00000000.00000000.00000000 = 255.0.0.0
+Classe B /16 = 11111111.11111111.00000000.00000000 = 255.255.0.0
+Classe C /24 = 11111111.11111111.11111111.00000000 = 255.255.255.0
+
+------- Modelos em Camada Osi ------
+1- Aplicação = HTTP, RTP,SMTP,FTP,SSH,Telenet,SIP, 
+ Funções = Prover serviços de Rede ás aplicações
+
+2- Apresentação = XDR,TLS
+ Funções = Criptografia,codificação,compressão e formatos de dados.
+
+3- Sessão = NetBios
+ Funções = Iniciar,Manter e Finalizar sessões de comunicação
+
+4- Transporte = NetBEUI,TCP,UDP,SCTP,DCCP,RIP
+ Funções = Transmissão confiavel de Dados, segmentação
+
+5- Rede = IP,(IPv4,IPv6), Ipsec, ICMP,ARP,RARP,NAI
+ Funções = Endereçamento lógico e roteamento;Controle de Tráfego
+
+6-Enlace = Ethernet,IEEE 802,1Q,HDLC,Token ring,FDDI,PPP,Switch,Frame,relay,ATM
+ Funções = Endereçameto fisico,Transmissão confiável de quadros.
+
+7- Física = Modem,802,11 WIR,RDIS,RS-232,EIA-422,Bluetooth
+ Funções = Interface com meios de transmissão e sinalização
+
+Protocólo TCP/IP = Aplicação,Transporte,Internet,Interface com a Rede;
+
+------- Pacote -------
+É como a informação é transportada na rede
+------------------------------------------
+
+------------------------------- Exercicios ----------------------------
+* Para resolução de nomes em IPs utilizamos qual serviço?
+-DNS
+
+*Qual padrão de placa de rede é mais rápido?
+- Gigabit Ethernet
+
+*Qual o tipo de cabo mais utilizada em LANs atualmente?
+-Par Trançado
+
+*Qual o nome do conector mais utilizado em cabos de redes locais?
+-RJ-45
+
+*Qual a velocidade máxima alcançada por cabos pares trançados cat5e?
+-1000 Mbits
+
+*Qual camada do modelo TCP/IP o padrão Ethernet se encontra
+-Rede/Física
+
+*Para resolução de nomes em IPs utilizamos qual serviço?
+-21
+
+*Para transferência de arquivos via internet utilizamos qual serviço?
+-FTP
+
+-----------------------------------------------------------------------
