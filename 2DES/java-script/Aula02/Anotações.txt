@@ -1,0 +1,34 @@
+Aula 02  - Jason 
+
+let aluno = {
+    nome:"Fulano",
+    matricula:123,
+    status: True,
+    notas:[5,7,9]
+    tep:{
+        materia:"...",
+        semestre: 3
+    }
+}
+
+aluno.nome
+
+aluno.nome.forEach(...)
+
+for(....)
+    aluno.nota[i]
+
+[{...},{...},{...}]
+
+Arvore Doom
+
+html
+    head
+        body
+            h1 - div
+                    h2 - img
+
+Árvore Doom - Java Script
+
+window
+      location - history - document
