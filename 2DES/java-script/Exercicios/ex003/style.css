@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins';
+}
+
+#container {
+    margin-top: 10%;
+    display: flex;
+    justify-content: center;
+}
+
+body {
+    background-color: rgba(218, 216, 216, 0.534);
+}
+
+h1 {
+    text-align: center;
+    font-size: 18pt;
+
+    color: white
+}
+
+#cont-placa {
+    padding: 20px;
+    border-radius: 20px;
+    width: 300px;
+    margin: 30px;
+    background-color: #282628;
+}
+
+#inputPlaca {
+    border: 1px;
+    border-radius: 10px;
+    padding: 5px;
+    width: 50%;
+    margin: 10px 1%;
+
+}
+
+#button {
+    margin: 10px 5%;
+    width: 29%;
+    border: 1px;
+    border-radius: 10px;
+    background-color: #504e4eaf;
+    padding: 6px;
+    color: white;
+}
+
+#button:hover {
+    transition: 0.2s;
+    background-color: #57545759;
+}
+
+#result {
+    margin: 5px 20% 0px 20%;
+    text-align: center;
+    width: 55%;
+    padding: 3px;
+    border-radius: 5px;
+    background-color: aliceblue;
+
+}
+
+#cont-cpf h1 {
+    color: rgb(29, 200, 252);
+}
+
+
+#cont-cpf {
+    padding: 20px;
+    border-radius: 20px;
+    width: 300px;
+    margin: 30px;
+    background-color: #ffffff;
+}
+
+#inputCPF {
+    border: 1px;
+    border-radius: 5px;
+    padding: 5px;
+    width: 50%;
+    margin: 10px 1%;
+    border: 1px solid black;
+
+}
+
+#button-cpf {
+    margin: 10px 5%;
+    width: 29%;
+    border: 1px;
+    border-radius: 10px;
+    background-color: #0084ff;
+    padding: 6px;
+    font-size: 10pt;
+    color: white;
+}
+
+#button-cpf:hover {
+    background-color: #0084ff8e;
+}
+
+.span-result-placa {
+    margin-left: 35%;
+    margin-top: 30px;
+    color: white;
+}
+
+.span-result-cpf {
+    margin-left: 35%;
+    margin-top: 10px;
+    
+}
+
+#result-cpf {
+    margin: 5px 20% 0px 20%;
+    text-align: center;
+    width: 55%;
+    padding: 3px;
+    border-radius: 5px;
+    background-color: aliceblue;
+
+}

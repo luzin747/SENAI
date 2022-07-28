@@ -1,0 +1,2 @@
+SGBD - Sistema Gerenciador de Banco de Dados
+mysql - metadada
