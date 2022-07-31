@@ -1,3 +1,5 @@
+
+//_________________ EXERCICIO 01 _______________ //
 //Crie uma função que valide se um valor passado como parâmetro é uma placa de 
 //automóvel ex: validarPlaca(placa) a função deve retornar um valor boolean, “true” se for uma 
 //placa válida e “false” se não for válida.
@@ -10,96 +12,260 @@ var resultado = document.querySelector("#result")
 button.addEventListener("click", validarPlaca)
 
 resultado.disabled = true
-
+resultado.value = 'Aguardando Placa. . . . .'
 function validarPlaca() {
-    resposta = `Placa inválida`
+    
+    resposta = false
+    
     console.log(buscaPlaca);
 
-    const placaAntiga = /^[a-zA-Z]{3}[0-9]{4}$/
+    const placaAntigaComIfem = /^[a-zA-Z]{3}[0-9]{4}$/
+    const placaAntiga = /^[a-zA-Z]{3}[-][0-9]{4}$/
     const placaNova = /^[a-zA-Z]{3}[0-9]{1}[a-zA-Z]{1}[0-9]{2}$/
 
     if (placaAntiga.test(buscaPlaca.value)) {
-        resposta = `Placa Valida`
-    }else if (placaNova.test(buscaPlaca.value)) {
-        resposta = `Placa Valida`
-    }
-        
-    resultado.value = resposta
+        resposta = true
+    } else if (placaNova.test(buscaPlaca.value)) {
+        resposta = true
     
+    }else if (placaAntigaComIfem.test(buscaPlaca.value)) {
+        resposta = true
+    }
+
+    if (resposta == true) {
+        resposta = 'Placa Válida'
+        resultado.style.color = 'green'
+    }
+    if (resposta == false) {
+        resposta = 'Placa Inválida'
+        resultado.style.color = 'red'
+
+    }
+    
+
+    resultado.value = resposta
+
 }
 
-// – Crie uma função para validar se um CPF é válido, busque na internet quais são as regras 
-// para que um CPF seja validado. A função deve ser no mesmo modelo da função anterior ex: 
+//_________________ EXERCICIO 02 _______________ //
+// Crie uma função para validar se um CPF é válido, busque na internet quais são as regras
+// para que um CPF seja validado. A função deve ser no mesmo modelo da função anterior ex:
 // validaCPF(cpf) e retornar verdadeiro ou falso
 
+var recebeCPF = document.querySelector('#inputCPF')
+var resultadoCPF = document.querySelector('#result-cpf')
 
-
-var buscaCPF = document.querySelector("#inputCPF")
-var buton = document.querySelector("#button-cpf")
-var resultadoCPF = document.querySelector("#result-cpf")
+var botaoCPF = document.querySelector('#button-cpf')
+botaoCPF.addEventListener('click', isCPF)
 
 
 resultadoCPF.disabled = true
-buton.addEventListener("click", )
+resultadoCPF.style.color = ''
+resultadoCPF.value = 'Aguardando CPF. . . .'
 
-function validarCPF() {
-    if (buscaCPF(document.frmcpf.cpf.value))
-    {
-        document.frmcpf.submit();
-    } else {
-        errors = "1";
-        if (errors)
-            alert('CPF inválido');
-        document.retorno = (errors == '');
+function isCPF() {
+
+    var cpf = recebeCPF.value
+
+    cpf = cpf.replace(/\.|-/g, "");
+    let soma = 0;
+
+    
+    resposta = true
+    soma += cpf[0] * 10;
+    soma += cpf[1] * 9;
+    soma += cpf[2] * 8;
+    soma += cpf[3] * 7;
+    soma += cpf[4] * 6;
+    soma += cpf[5] * 5;
+    soma += cpf[6] * 4;
+    soma += cpf[7] * 3;
+    soma += cpf[8] * 2;
+    soma = (soma * 10) % 11;
+    if (soma == 10 || soma == 11)
+        soma = 0;
+
+
+    if (soma != cpf[9])
+
+        resposta = false
+    soma = 0;
+    soma += cpf[0] * 11;
+    soma += cpf[1] * 10;
+    soma += cpf[2] * 9;
+    soma += cpf[3] * 8;
+    soma += cpf[4] * 7;
+    soma += cpf[5] * 6;
+    soma += cpf[6] * 5;
+    soma += cpf[7] * 4;
+    soma += cpf[8] * 3;
+    soma += cpf[9] * 2;
+    soma = (soma * 10) % 11;
+
+    if (soma == 10 || soma == 11)
+        soma = 0;
+    if (soma != cpf[10])
+        resposta = false
+
+
+    if (resposta == true) {
+        resposta = 'CPF Válido'
+        resultadoCPF.style.color = 'green'
     }
+    if (resposta == false) {
+        resposta = 'CPF Inválido'
+        resultadoCPF.style.color = 'red'
+
+    }
+
+    resultadoCPF.value = resposta
+
+
 }
 
-function vercpf(cpf) {
-    if (cpf.length != 11 ||
-        cpf == "00000000000" ||
-        cpf == "11111111111" ||
-        cpf == "22222222222" ||
-        cpf == "33333333333" ||
-        cpf == "44444444444" ||
-        cpf == "55555555555" ||
-        cpf == "66666666666" ||
-        cpf == "77777777777" ||
-        cpf == "88888888888" ||
-        cpf == "99999999999")
-        return false;
 
-    add = 0;
+//_________________ EXERCICIO 03 _______________ //
+// Crie uma função que gere telefones aleatórios, a função deve receber como parâmetro o
+// número ddd e a quantidade de telefones e deve retornar um vetor com os números gerados.
+// Ex: geraTelefones(19,3) e deve retornar ex: 19-98777-7898, 19-98777-7898, 19-94687-4568
 
-    for (i = 0; i &lt; 9; i++)
-            add += parseInt(cpf.charAt(i)) * (10 - i);
-    rev = 11 - (add % 11);
-    if (rev == 10 || rev == 11)
-        rev = 0;
-    if (rev != parseInt(cpf.charAt(9)))
-        return false;
-    add = 0;
-            for (i = 0; i &lt; 10; i++)
-            add += parseInt(cpf.charAt(i)) * (11 - i);
-    rev = 11 - (add % 11);
-    if (rev == 10 || rev == 11)
-        rev = 0;
-    if (rev != parseInt(cpf.charAt(10)))
-        return false;
-    alert('O CPF INFORMADO É VÁLIDO.');
-    return true;
+var qtdTelefone = document.querySelector('#inpGeraTell')
+var ddd = document.querySelector('#inpDDD')
+var buttonGerarTell = document.querySelector('#button-geTell')
+var resultadoGeraTell = document.querySelector('#result-geTell')
+
+resultadoGeraTell.disabled = true
+
+function gerarTelefones(ddd, quantidade) {
+    
+    let telefones = []
+    for (let i = quantidade; i > 0; i--) {
+        let phone = `${ddd}-${Math.floor(Math.random() * (99999 - 11111 + 1)) + 11111}-${Math.floor(Math.random() * (9999 - 1111 + 1)) + 1111}`
+        telefones.push(phone)
+    }
+    return telefones
 }
 
-$j(document).ready(function () {
+buttonGerarTell.addEventListener("click", ()=> {
+    let telefones = gerarTelefones(ddd.value, qtdTelefone.value)
+    resultadoGeraTell.innerHTML = ''
+    telefones.forEach(function(telefone){
+       
+       resultadoGeraTell.innerHTML += `${telefone} \n`
+           
+       
+    })
+    
+})
 
-    $j("#meuForm").validate({
-        rules: {
-            NrCpf: {NrCpf: true, required: true}
-        },
-        messages: {
-            NrCpf: {NrCpf: alert('CPF Inválido')}
+function limpar (){
+    for(let i = 0; i < 3; i ++) {
+        document.getElementById('inpGeraTell').value = ''
+        document.getElementById('inpDDD').value = ''
+        document.getElementById('result-geTell').innerHTML = ''
+    }
+   
+}
+
+
+//_________________ EXERCICIO 04 _______________ //
+// Crie uma função que gere CPFs válidos aleatórios, deve receber como parâmetro quantos CPFs deve gerar e retornar um vetor com os CPFs gerados.
+
+function validaCPF(cpf) {
+
+    let mult
+    let soma = 0
+    let indice = 0
+    let resto
+
+    //primeira conta
+    if (cpf.length == 11) {
+        for (let i = 10; i >= 2; i--) {
+            mult = i * cpf[indice]
+            soma += mult
+            indice++
         }
-    });
-});
+        resto = (soma * 10) % 11
+
+        if (resto == 10 || resto == 11) {
+            resto = 0
+        }
+        if (resto != cpf[9]) {
+            //console.log("Cpf invalido")
+            return false
+        } else {
+            //segunda conta
+            indice = 0
+            soma = 0
+            for (let i = 11; i >= 2; i--) {
+                mult = i * cpf[indice]
+                soma += mult
+                indice++
+            }
+            resto = (soma * 10) % 11
+            if (resto == cpf[10]) {
+                //console.log("Cpf valido")
+                return true
+            } else {
+                //console.log("Cpf invalido")
+                return false
+            }
+        }
+    } else {
+        return false
+        //console.log("tamanho do cpf excedido")
+    }
+
+}
+
+var qtdCPF = document.querySelector('#inpGeraCPF')
+var buttonGeCPF = document.querySelector('#button-geCPF')
+var resultadoGeraCpf = document.querySelector('#result-geCPF')
+
+
+
+resultadoGeraCpf.disabled = true
+   
+    function gerarCPF(quantidade) {
+        let indice = 0
+        var cpfs = []
+    
+        while (indice != quantidade) {
+            let cpfGerado = Math.floor(Math.random() * (99999999999 - 00000000000 + 1) + 00000000000).toString()
+            if (validaCPF(cpfGerado)) {
+                cpfs.push(cpfGerado)
+                indice++
+            }
+        }
+    
+        return cpfs
+    
+    }
+    
+    buttonGeCPF.addEventListener("click", () => {
+        let cpfs = gerarCPF(qtdCPF.value)
+        resultadoGeraCpf.innerHTML = ''
+        cpfs.forEach(function(cpf){
+            resultadoGeraCpf.value += `${cpf} \n`
+        })
+    })
+    
+    function limparGeCPF (){
+            document.getElementById('inpGeraCPF').value = ''
+            document.getElementById('result-geCPF').value = ''  
+    }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
