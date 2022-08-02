@@ -1,3 +1,48 @@
+const = pq os elementos são imultaveis
+
+tipos de bancos de dados
+
+Não Estruturado .txt .docx .pdf
+Semi Estruturado: formato de tabela/objeto .xlsx .csv .json
+Estruturado: 
+  SQL    Não SQL
+  |DDL   |chave - valor
+  |DML   |tabelas
+  |DCL
+ Relacionais   Não Relacionais
+
+
+ Arquivo CSV - Semi Estruturado/Não SQL/ Não Relacional
+ Exel        - Semi Estruturado/Não SQL/ Não Relacional
+ Power BI    - Estruturado/Não SQL/ Relacional
+ Firebase    - Estruturado/Não SQL / Não Relacional
+ MySQL       - Estruturado/SQL/Relacional
+ Acess       - Estruturado/SQL/Relacional
+ Oracle      - Estruturado/SQL/Relacional
+ SQL Server  - Estruturado/SQL/Relacional
+ B2          - Estruturado/SQL/Relacional
+ Mongo DB    - Estruturado/Não SQL/Relacional
+
+Dado  -> Informação -> Conhecimento -> Inteligência
+Bruto -> Decisão    ->     Ensino   ->      R$
+                  ___
+Tabela Entidade  |___| // Tem que ser Retângulo
+                
+Relacionamentos 🔶 Cardinalidade 
+
+    Simples {   Min-Max {
+        1-n         (on)(oi)
+        n-1         (oi)(on)
+        1-1         (in)(ni)
+        n-n         (ni)(in)
+    }            }                  
+          ⬜
+       ⬜_|_⬜
+🎩 -> ⬜_|_⬜ -> 🖥️  ->  🕴🏻
+bd       ⬜       front  (user)
+      servidores
+         beck
+=======
 
 const = pq os elementos são imultaveis
 
@@ -43,3 +88,4 @@ Relacionamentos 🔶 Cardinalidade
 bd       ⬜       front  (user)
       servidores
          beck
+>>>>>>> d2718b50f5c18bf4ce88bd64d0df173dc49ce967
