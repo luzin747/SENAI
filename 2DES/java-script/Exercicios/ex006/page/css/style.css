@@ -66,6 +66,12 @@ ul li a:hover {
     height: 20vh;
     background-color: aqua;
 }
-.card-item img {
+#imagem-item {
     width: 100%;
 }
+
+.carrinho {
+    width: 15%;
+}
+
+
