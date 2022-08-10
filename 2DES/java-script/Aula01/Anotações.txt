@@ -10,3 +10,7 @@ console.log("Imprime na Tela")
 
 ** Template String **8
 ` ${nomedavariavel}`
+
+document
+location
+history

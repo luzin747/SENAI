@@ -12,19 +12,115 @@ body {
 }
 h2 {
     text-align: center;
+    color: red;
+    text-decoration: underline;
+}
+h3 {
+    font-size: 18pt;
+    text-align: center;
+    color: red;
+    text-decoration: underline;
 }
 
 #container {
-    margin: 5rem;
+    margin: 10rem;
+    
+}
+.cadastro {
+    width: 40vw;
     background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 0px 7px rgba(0,0,0,.5);
+    margin: 0 auto;
+}
+.cadastro p {
+    padding: 6px;
 }
 
 .info {
     display: flex;
-    margin: 10px;
+    
+    justify-content: space-around;
+    margin: 15px;
 }
 
 .info input {
-    padding-right: 10px;
+    
+    width: 25%;
+    
+    border-radius: 10px;
+    padding: 5px;
+    margin-left: 5px;
+    border: 1px solid rgba(0,0,0,.5);
+}
+
+#inpCargo {
+    
+    
+    border-radius: 10px;
+    padding: 5px;
+    margin-left: 5px;
+    border: 1px solid rgba(0,0,0,.5);
+}
+
+#inpSalario {
+    
+}
+
+button {
+   display: block;
+   margin: 0 auto;
+   margin-top: -2%; 
+   padding: 8px;
+   border: 0px solid black;
+   font-weight: 500;
+   border-radius: 35px;
+   color: white;
+   background-color: red;
+   cursor: pointer;
+}
+
+button:hover {
+   background-color: rgb(231, 33, 33);
+
+}
+
+#tabela {
+    width: 60%;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 0px 7px rgba(0,0,0,.5);
+    display: flexbox;
+    margin: 5rem auto;
+}
+
+.rows-title td {
+    padding: 0px 0px;
+    font-weight: 500;
+    font-size: 12pt;
+    color: white;
+    background-color: red;
+    text-align: center;
+
+
+}
+
+
+table {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  flex-wrap: wrap;
+  
+}
+
+
+
+#rows td {
+    width: 260px;
+    text-align: center;
+    border: 1px solid black;
 }
 
