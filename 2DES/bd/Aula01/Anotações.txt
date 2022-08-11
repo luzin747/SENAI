@@ -1,2 +1,5 @@
 SGBD - Sistema Gerenciador de Banco de Dados
 mysql - metadada
+
+MER = Modelo entidade e Relacionamento
+DER = Diagrama entindade e Relacionamento(Mer desenhado)

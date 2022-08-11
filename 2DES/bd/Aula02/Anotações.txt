@@ -1,0 +1,2 @@
+O diagrama conceitual = esta mais proximo da solução
+O Diagrama logico =  esta mais proximo do problema/desenvolvimento

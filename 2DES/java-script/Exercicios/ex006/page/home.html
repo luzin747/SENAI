@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
+<body onload="carregar()">
 
     <header id="container">
         <nav id="modelo">
@@ -30,24 +30,41 @@
 
     <hr>
 
+    <h1 style="text-align: center;">Tênis de Alta Qualidades</h1>
+
     <div id="items">
-        <div>
-            <div class="card-item">
-                <img id="imagem-item" src="img/banners/nike-tenis.jpg" alt="">
+        <div class="modelo">
+            <div id="card">
+                <div class="card-item">
+                    <div id="card">
+                        <img id="imagem-item" src="img/banners/nike-tenis.jpg" alt="">
 
-                <div id="caption">
-                    <h4>Nome do Produto</h4>
-                    <p>Preço do Produto</p>
+
+                        <div id="cont-caption">
+                            <div>
+                                <h4 id="name-product">Nome do Produto</h4>
+                                <hr class="linha-caption">
+                                <p id="price-product">Preço do Produto</p>
+
+
+                            </div>
+                            <button>Buy</button>
+
+
+                        </div>
+
+                    </div>
                 </div>
-                <img class="carrinho" src="img/banners/carrinho-de-compras-de-design-xadrez.png" alt="">
-            </div>
-        </div>
 
+            </div>
+
+
+        </div>
     </div>
 
 </body>
 
-<script src="js.script.js"></script>
+<script src="js/script.js"></script>
 
 
 </html>
