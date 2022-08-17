@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 08</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div id="container">
+
+
+        <img src="img/banner.png" alt="">
+
+        <div class="form">
+
+            <h1>Cadastrar</h1>
+
+            <hr>
+
+            <div class="input-single inp-single">
+                <div>
+                    <label for="nome">Nome</label> <br>
+                    <input required type="text" name="" id="nome" class="nome">
+                </div>
+
+                <div>
+                    <label for="email">Email</label><br>
+                    <input required type="email" name="" id="email" class="email">    
+                </div>
+            </div>
+
+            <div class="input-single inp-single">
+
+                <div>
+                    <label for="senha">Senha</label><br>
+                    <input required type="password" name="" id="senha" class="senha">
+                </div>
+
+                <div>
+                    <label for="senha">Confirmar Senha</label><br>
+                    <input required type="password" name="" id="senha" class="senha">
+                </div>
+
+            </div>
+
+            <div class="input-single">
+
+
+            </div>
+
+            <div class="input-single inp-ddd">
+                <label class="l-ddd">DDD</label>
+                <input type="number" id="DDD">
+                <label class="tel">Telefone</label>
+                <input type="tel" id="telefone">
+            </div>
+
+            <div class="block-cep">
+                <div class="input-single">
+                    <label>CEP</label><br>
+                    <input type="number" placeholder="Inserir CEP" id="cep">
+                </div>
+
+                <div class="input-single">
+
+                    <div>
+                        <label>Logradouro</label>
+                        <input type="text" id="logradouro" disabled>
+                    </div>
+
+                    <div>
+                        <label>Bairro</label>
+                        <input type="text" id="bairro" disabled>
+                    </div>
+
+                    <div>
+                        <label>Cidade</label>
+                        <input type="text" id="Cidade" disabled>
+                    </div>
+                    <label>Estado</label>
+                    <input type="text" id="Estado" disabled>
+                </div>
+            </div>
+
+
+            <button onclick="cadastrar(this)">Cadastrar</button>
+
+            <h3><a class="search-password" href="">Ja Possui Conta?</a></h3>
+
+
+            <a href="page/home.html"></a>
+
+        </div>
+    </div>
+    </div>
+
+
+</body>
+
+</html>

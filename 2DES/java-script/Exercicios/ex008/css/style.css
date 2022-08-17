@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,500;1,600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins';
+}
+
+body {
+    background-color: #F2F2F2;
+}
+
+#container {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 5%;
+}
+
+#container h1 {
+    text-align: center;
+}
+
+#container h3 {
+    font-size: 10pt;
+    text-align: center;
+}
+
+#container img {
+    width: 30%;
+    object-fit: cover;
+}
+
+
+.form {
+    background-color: white;
+    margin: 3rem;
+    border-radius: 20px;
+    padding: 30px;
+    width: 30%;
+
+    
+}
+
+.form button {
+    display: flex;
+    margin: 0 auto;
+    margin-top: 20%;
+    padding: 5px 10px ;
+    background-color: red;
+    font-weight: 600;
+    color: white;
+    border: none;
+    font-size: 11pt;
+    border-radius: 30px;
+}
+
+.input-single {
+    margin: 10px;
+}
+
+
+.input-single input {
+    width: 100%;
+    font-size: 12pt;
+    border: none;
+    border: 1px solid rgba(0, 0, 0, 0.288);
+    padding: 5px;
+    border-radius: 20px;
+    margin: 0px;
+    height: 20px;
+    padding-left: 10px;
+}
+
+.input-single label {
+    font-weight: 300;
+    color: black;
+}
+
+#DDD {
+    width: 15%;
+}
+
+#telefone {
+    width: 30%;
+}
+
+.l-ddd {
+    margin-left: 15px;
+}
+
+.tel {
+    margin-left: 10px;
+}
+
+#cep {
+    width: 50%;
+    
+}
+
+.block-cep {
+    display: flex;
+    
+}
+
+.inp-ddd {
+    padding-top: 20px;
+    margin-left: 20%;
+}
+
+
+#input-single-cep  {
+    width: 100%;
+    font-size: 12pt;
+    border: none;
+    border: 1px solid rgba(0, 0, 0, 0.288);
+    padding: 5px;
+    border-radius: 20px;
+    margin: 0px;
+    height: 20px;
+    padding-left: 10px;
+}
+
+.inp-single {
+    display: flex;
+    justify-content: space-around;
+}
+
+.inp-single input {
+    
+    width: 100%;
+    
+}
