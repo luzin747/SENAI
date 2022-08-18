@@ -15,76 +15,91 @@
     <div id="container">
 
 
-        <img src="img/banner.png" alt="">
+        <img src="img/banner2.png" alt="">
 
         <div class="form">
 
-            <h1>Cadastrar</h1>
+            <h1>Cadastro</h1>
 
             <hr>
 
             <div class="input-single inp-single">
+
                 <div>
-                    <label for="nome">Nome</label> <br>
                     <input required type="text" name="" id="nome" class="nome">
+                    <label for="nome">Nome</label>
                 </div>
 
                 <div>
-                    <label for="email">Email</label><br>
-                    <input required type="email" name="" id="email" class="email">    
+                    <input required type="email" name="" id="email" class="email">
+                    <label for="userEmail">Email</label>
                 </div>
+                
             </div>
 
-            <div class="input-single inp-single">
+            <div class="input-single inp-single inp-senha">
 
                 <div>
-                    <label for="senha">Senha</label><br>
                     <input required type="password" name="" id="senha" class="senha">
+                    <label for="senha">Senha</label>
                 </div>
 
                 <div>
-                    <label for="senha">Confirmar Senha</label><br>
-                    <input required type="password" name="" id="senha" class="senha">
+                    <input required type="password" name="" id="confirmarSenha" class="confirmarSenha">
+                    <label for="confirmarSenha">Confirmar Senha</label>
                 </div>
 
             </div>
 
-            <div class="input-single">
+            <div class="input-single inp-single inp-ddd">
+                <div>
+                    <input required type="tel" id="telefone">
+                    <label for="telefone">Telefone</label>
+                </div>
 
+                <div>
+                    <input required type="number" id="cep">
+                    <label for="cep">CEP</label><br>
+                </div>
+
+                <!-- <div>
+                    <input required type="number" id="DDD">
+                    <label>DDD</label>
+                </div> -->
 
             </div>
 
-            <div class="input-single inp-ddd">
-                <label class="l-ddd">DDD</label>
-                <input type="number" id="DDD">
-                <label class="tel">Telefone</label>
-                <input type="tel" id="telefone">
-            </div>
 
             <div class="block-cep">
-                <div class="input-single">
-                    <label>CEP</label><br>
-                    <input type="number" placeholder="Inserir CEP" id="cep">
-                </div>
-
                 <div class="input-single details-cep">
+
+                <div class="input-single inp-cep">
+
 
                     <div>
                         <label>Logradouro</label>
+                        <hr>
                         <input type="text" id="logradouro" disabled>
-                    </div>
 
-                    <div>
+
                         <label>Bairro</label>
+                        <hr>
                         <input type="text" id="bairro" disabled>
+
                     </div>
 
                     <div>
                         <label>Cidade</label>
+                        <hr>
                         <input type="text" id="Cidade" disabled>
+
+
+                        <label>Estado</label>
+                        <hr>
+                        <input type="text" id="Estado" disabled>
+                        
                     </div>
-                    <label>Estado</label>
-                    <input type="text" id="Estado" disabled>
+
                 </div>
             </div>
 
@@ -94,7 +109,6 @@
             <h3><a class="search-password" href="">Ja Possui Conta?</a></h3>
 
 
-            <a href="page/home.html"></a>
 
         </div>
     </div>
@@ -102,5 +116,7 @@
 
 
 </body>
+
+<script src="js/script.js"></script>
 
 </html>

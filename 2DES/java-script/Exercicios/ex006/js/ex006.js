@@ -24,6 +24,10 @@ function logar(e) {
 
     if(user == item.usuario && senha == item.senha) {
       window.location.href = "./page/home.html"
+<<<<<<< HEAD
+      console.log(window.location.href)
+=======
+>>>>>>> b2a1dfaa956dc57c15a6c1d939239294df6ae331
       achou = true
     }
   }) 
