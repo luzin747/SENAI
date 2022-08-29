@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,500;1,600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins';
+}
+
+h1 {
+    text-align: center;
+    font-size: 30pt;
+    width: 100%;
+    background-color: rgb(245, 8, 8);
+    color: white;
+
+}
+
+h2 {
+    text-align: center;
+}
+
+h3 {
+    text-align: center;
+}
+
+h6{
+    font-size: 27pt;
+    text-align: center;
+}
+#container hr {
+    width: 60%;
+    margin: 0 auto;
+}
+
+.model {
+    display: none;
+    visibility: hidden;
+}
+
+#contAlunos {
+    display: flex;
+    margin: 1rem;
+    
+}
+
+#Alunos {
+    border: 1px solid rgba(0, 0, 0, 0.089);
+    box-shadow: 0px 0px 5px rgba(0,0,0,.5);
+    margin: 10px;
+    border-radius: 20px;
+    padding: 20px;
+
+}
+
+.title-Aparelho {
+}
+
+#contAparelhos , #contExercicios ,#contFichas {
+    display: flex;
+    flex-wrap: wrap;
+    width: 590px;
+    justify-content: center;
+    margin: 1.5rem;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.233);
+    text-align: center;
+    height: 100% !important;
+
+}
+
+
+#aparelhos , #exercicios, #fichas {
+    border: 1px solid rgba(0, 0, 0, 0.151);
+    width: 46%;
+    border-radius: 10px;
+
+    padding: 10px;
+    margin: 10px;
+}
+

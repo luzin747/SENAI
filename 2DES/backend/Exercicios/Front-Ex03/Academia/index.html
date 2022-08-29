@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academia</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div id="container">
+
+        <section>
+            <h6>Alunos</h6>
+
+            <hr>
+
+            <div id="contAlunos">
+
+                <div id="Alunos" class="model">
+                    <h2>Id: <span id="idAluno">Id:</span></h2>
+
+                     <span id="nomeAluno"></span>
+
+                    <div>
+                        <p>Nascimento <span id="dataNascimento">22/02/2022</span></p>
+                        <p>Sexo <span id="sexo">Sexo</span></p>
+                        <p>Peso: <span id="peso">Peso</span></p>
+                    </div>
+
+                    <p id="telefone">(11)11111-1111</p>
+                </div>
+            </div>
+        </section>
+
+        <section style="display: flex; justify-content:space-evenly;"> 
+
+            <div id="contAparelhos">
+                
+                
+                <h1 class="title-Aparelho">Aparelhos</h1>
+
+                <div style="display: flex;">
+
+                    <div id="aparelhos" class="model">
+                        <h3>Id <span id="id_aparelho"></span></h3>
+                        <p id="nomeAparelho">Nome</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <div id="contExercicios">
+
+                <h1 id="title-Exercicios">Exercicios</h1>
+
+
+                <div id="exercicios" class="model">
+                    <h3>Exercicio <span id="id_exercicio"></span></h3>
+                    <p id="descricao">Nome</p>
+                    <p id="grupo_muscular"></p>
+                    <h4>Aparelho <span id="id_aparelho"></span></h4>
+                </div>
+            </div>
+
+            <div id="contFichas">
+                <h1 id="title-Exercicios">Fichas</h1>
+
+                <div id="fichas" class="model">
+                    <h3>Aluno <span id="id_aluno"></span></h3>
+                    <p id="id_exercicio">Nome</p>
+                    <p id="dia_semana">Semana</p>
+                    <h4>Serie <span id="serie"></span></h4>
+                </div>
+            </div>
+
+
+    </div>
+    </section>
+
+</body>
+
+<script src="js/script.js"></script>
+
+</html>

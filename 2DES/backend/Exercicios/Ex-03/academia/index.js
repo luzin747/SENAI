@@ -11,7 +11,9 @@ const con = mysql.createConnection({
     database: 'academia'
 });
 
-app.get('/alunos', (req,res) => {
+app.use(cors())
+
+app.get('/academia/alunos', (req,res) => {
     let string = "select * from vw_alunos"
     // res.json("Oi q q c qué, eu sou um back. mas não aquele q c ta pensando ")
     con.query(string,(err,result) => {
