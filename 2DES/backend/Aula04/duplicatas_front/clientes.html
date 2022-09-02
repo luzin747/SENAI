@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body onload="loadCli()">
+
+    <div id="container">
+
+        <h2></h2>
+
+        <div id="cont-Cliente">
+
+
+
+            <div id="cont-tabela" class="model">
+
+
+
+
+                <!-- <img id="imagem-user" src="" alt=""> -->
+
+                <h3 class="nome">Nome:</h3>
+
+                <hr>
+
+                <div class="details">
+                    <h5 id="cod_cli">Codigo Cliente</h5>
+
+                    <p>Endereço: <span class="endereco"></span></p>
+                    <p>Bairro: <span class="bairro"></span></p>
+                    <p>Cidade: <span class="cidade"></span></p>
+                    <p>UF: <span class="estado"></span></p>
+
+                </div>
+
+                <i onclick="showModal(this)" class='bx bx-phone'></i>
+
+
+
+
+
+            </div>
+
+        </div>
+
+
+        <div class="modal sumir">
+
+            <i onclick="fecharModal()" class='bx bx-x'></i>
+
+            <h4 class="nomeCli">Cliente</h4>
+
+            <hr>
+
+            <div class="tell-phone tel-model">
+                <p class="tipo"></p>
+                <p class="numero"></p>
+            </div>
+        </div>
+
+    </div>
+
+    </div>
+
+
+
+</body>
+
+<script src="https://unpkg.com/boxicons@2.1.2/dist/boxicons.js"></script>
+
+<script src="js/script.js"></script>
+
+</html>
