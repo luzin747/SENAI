@@ -1,12 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aula</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>CRUD de Itens</title>
 </head>
-<body>
-    
+
+<body onload="carregar()">
+    <header>
+        <div>
+            <h1>Cadastro de Patrimonios</h1>
+            <button>Cadastrar</button>
+        </div>
+    </header>
+
+    <div class="container ">
+
+        <main class="corpo model">
+                
+                <div class="card ">
+
+                    <div class="contFechar">
+                        <i id="del" class='bx bx-x'></i>
+                    </div>
+                    <div>
+                        <img class="image" src="../docs/assets/access.png" alt="">
+                    </div>
+
+                    <div>
+                        <p style="text-align: center;" class="n1">1</p>
+                        <p class="aquisicao">2</p>
+                        <p class="demoninacao">3</p>
+                        <p class="valor">4</p>
+                    </div>
+
+
+
+            </div>
+        </main>
+    </div>
+
 </body>
+<script src="js/script.js"></script>
+<script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+
 </html>
