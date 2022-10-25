@@ -1,0 +1,16 @@
+AULA 01 - Java Script
+
+const
+var
+let
+
+#Todo Script fica no final da página.
+
+console.log("Imprime na Tela")
+
+** Template String **8
+` ${nomedavariavel}`
+
+document
+location
+history

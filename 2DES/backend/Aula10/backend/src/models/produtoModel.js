@@ -5,3 +5,8 @@ const create = (model) => {
 const readAll = () => {
     return `select * from produtos`
 }
+
+module.exports = {
+    create,
+    readAll
+}

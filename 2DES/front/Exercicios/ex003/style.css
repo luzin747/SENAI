@@ -1,0 +1,302 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins';
+}
+
+#container {
+    
+    margin-top: 2%;
+    ;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    
+}
+
+body {
+    background-color: rgba(218, 216, 216, 0.534);
+}
+
+#cont-placa , #cont-cpf, #cont-gerador-Telefones {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.281);
+}
+
+h1 {
+    text-align: center;
+    font-size: 18pt;
+
+    color: white
+}
+
+/*____________ CSS Validador DE Placas ______________*/
+#cont-placa {
+    padding: 20px;
+    border-radius: 20px;
+    width: 300px;
+    margin: 30px;
+    background-color: #282628;
+}
+
+#inputPlaca {
+    border: 1px;
+    border-radius: 10px;
+    padding: 5px;
+    width: 50%;
+    margin: 10px 1%;
+
+}
+
+#button {
+    margin: 10px 5%;
+    width: 29%;
+    border: 1px;
+    border-radius: 10px;
+    background-color: #504e4eaf;
+    padding: 6px;
+    color: white;
+}
+
+#button:hover {
+    background-color: #57545759;
+}
+
+#result {
+    margin: 5px 20% 0px 20%;
+    text-align: center;
+    width: 55%;
+    padding: 3px;
+    border-radius: 5px;
+    background-color: aliceblue;
+
+}
+
+/*____________ CSS Validador DE CPF ______________*/
+
+#cont-cpf h1 {
+    color: #1dc8fc;
+}
+
+
+#cont-cpf {
+    padding: 20px;
+    border-radius: 20px;
+    width: 300px;
+    margin: 30px;
+    background-color: #ffffff;
+}
+
+#inputCPF {
+    border: 1px;
+    border-radius: 5px;
+    padding: 5px;
+    width: 50%;
+    margin: 10px 1%;
+    border: 1px solid black;
+
+}
+
+#button-cpf {
+    margin: 10px 5%;
+    width: 29%;
+    border: 1px;
+    border-radius: 10px;
+    background-color: #0084ff;
+    padding: 6px;
+    font-size: 10pt;
+    color: white;
+}
+
+#button-cpf:hover {
+    background-color: #0084ff8e;
+}
+
+.span-result-placa {
+    margin-left: 35%;
+    margin-top: 10px;
+    color: white;
+}
+
+.span-result-cpf {
+    margin-left: 35%;
+    margin-top: 10px;
+    
+}
+
+#result-cpf {
+    margin: 5px 20% 0px 20%;
+    text-align: center;
+    width: 55%;
+    padding: 3px;
+    border-radius: 5px;
+    background-color: aliceblue;
+
+}
+
+/*____________ CSS Gerador Telefones ______________*/
+
+#cont-gerador-Telefones {
+    padding: 20px;
+    border-radius: 20px;
+    width: 350px;
+    margin: 30px;
+    background-color: #ffffff;
+}
+#cont-gerador-Telefones h1 {
+    color: red;
+}
+.cont-input-geraTell {
+    display: flex;
+    justify-content: center;
+}
+#inpGeraTell {
+    border: 1px;
+    border-radius: 5px;
+    padding: 5px;
+    width:60%;
+    margin: 10px 1%;
+    border: 1px solid black;
+
+}
+#inpDDD {
+    border: 1px;
+    border-radius: 5px;
+    padding: 5px;
+    width: 30%;
+    margin: 10px 1%;
+    border: 1px solid black;
+
+}
+.button-and-input {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+}
+
+#button-geTell{
+    
+    width: 30%;
+    
+    height: 12%;
+    border: 1px;
+    border-radius: 10px;
+    background-color: #ff0000;
+    padding: 6px;
+    font-size: 10pt;
+    color: white;
+}
+#button-geTell:hover{
+    
+    background-color: #ee2626;
+
+}
+#button-limpar {
+    width: 30%;
+    margin-top: -7%;
+    margin-left: 70%;
+    height: 12%;
+    border: 1px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    padding: 6px;
+    font-size: 10pt;
+    color: rgb(255, 0, 0);
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.281);
+    font-weight: 500;
+}
+#button-limpar:hover {
+    background-color: #800000;
+    color: white;
+}
+
+textarea {
+    text-align: center;
+    height: 10vh;
+    cursor: auto;
+    width: 65%;
+    
+}
+
+/*____________ CSS Gerador CPF ______________*/
+
+#cont-gerador-CPF {
+    padding: 20px;
+    border-radius: 20px;
+    width: 350px;
+    margin: 30px;
+    background-color: #ffffff;
+}
+#cont-gerador-CPF h1 {
+    color: rgb(33, 255, 13);
+    
+}
+.cont-input-geraCPF {
+    display: flex;
+    justify-content: space-between;
+    
+}
+#inpGeraCPF {
+    border: 1px;
+    border-radius: 5px;
+    padding: 5px;
+    width: 32%;
+    margin: 10px 1%;
+    border: 1px solid black;
+
+}
+
+#button-geCPF{
+    
+    width: 30%;
+    margin-top: 3%;
+    height: 12%;
+    border: 1px;
+    border-radius: 10px;
+    background-color: rgb(33, 255, 13);
+    font-size: 15pt;
+    font-weight: 500;
+    padding: 6px;
+    font-size: 10pt;
+    color: white;
+}
+#button-geCPF:hover{
+    
+    background-color: rgb(27, 161, 15);
+
+
+}
+#button-limpar-geCPF {
+    width: 30%;
+    margin-left: 2%;
+    margin-top: 3%;
+    height: 12%;
+    border: 1px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    padding: 6px;
+    font-size: 10pt;
+    color: rgb(33, 255, 13);
+    font-weight: 600;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.281);
+    font-weight: 500;
+}
+#button-limpar-geCPF:hover {
+    background-color: #1f6e0f;
+    color: white;
+}
+
+#result-geCPF {
+    text-align: center;
+    height: 10vh;
+    cursor: auto;
+    width: 100%;
+    
+}
+
+
+
+
+
