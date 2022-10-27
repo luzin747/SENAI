@@ -1,9 +1,25 @@
 import * as React from 'react';
-import { View, Text, TouchableOpacity, Image, StyleSheet, TextInput,Button } from 'react-native';
+import { View, Text, StyleSheet,Button } from 'react-native';
 import { RadioButton } from 'react-native-paper';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+
 
 export default function Home({ navigation }) {
     const [checked, setChecked] = React.useState('first');
+
+    var data 
+    const salvar = async () => {
+        try{
+            const val = await AsyncStorage.getItem('Bibli')
+            var teste = val  != null ? JSON.parse(val) : null;
+            data = teste
+            console.log(data)
+            data.push(checked)
+            AsyncStorage.setItem('Bibli', JSON.stringify(data))
+        }catch(err) {
+            console.log(err)
+        }
+    }
 
     return (
 
@@ -14,8 +30,8 @@ export default function Home({ navigation }) {
             <RadioButton.Item styles={styles.teste}
                 label="Panda"
                 value="first"
-                status={checked === 'first' ? 'checked' : 'unchecked'}
-                onPress={() => setChecked('first')}
+                status={checked === 'C' ? 'checked' : 'unchecked'}
+                onPress={() => setChecked('C')}
             />
 
             <RadioButton.Item
@@ -39,7 +55,7 @@ export default function Home({ navigation }) {
                 onPress={() => setChecked('quarteiro')}
             />
             
-            <Button title="Proxima question" onPress={() => {navigation.navigate('Pergunta 05', checked)}}/>
+            <Button title="Proxima question" onPress={() => {navigation.navigate('Pergunta 05', salvar())}}/>
         </View>
 
     )

@@ -1,9 +1,43 @@
 import * as React from 'react';
 import { View, Text, TouchableOpacity, Image, StyleSheet, TextInput,Button } from 'react-native';
 import { RadioButton } from 'react-native-paper';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+
 
 export default function Home({ navigation }) {
-    const [checked, setChecked] = React.useState('first');
+    const [value , setValue] = React.useState('Clique no Botão Abaixo');
+
+
+    var data 
+    
+    var resp = []
+
+    var acertos = 0
+
+    const ler = async() => {
+        try{
+            const val = await AsyncStorage.getItem('Bibli')
+            var teste = val != null ? JSON.parse(val) : null;
+            data = teste
+
+            data.forEach((e , i) => {
+
+                console.log(i + e)
+
+                if(e == 'C') {
+                    acertos += 1
+                    setValue(acertos)
+                }
+
+                console.log(acertos)
+
+            })
+        }catch(err) {
+            console.log(err)
+        }
+    }
+
+    // console.log(arr)
 
     return (
 
@@ -11,11 +45,12 @@ export default function Home({ navigation }) {
 
             <Text style={styles.title}>Resultado das Questões do Renas</Text>
 
-            <Text>Pontuação: </Text>
+            <Text>Pontuação: {value} </Text>
 
-           
+            <Button style={styles.button} title="Ver Result" onPress={() => ler()}/>
+
             
-            <Button style={styles.button} title="Voltar a Primeira Questão" onPress={() => {navigation.navigate('Pergunta 01', checked)}}/>
+            {/* <Button style={styles.button} title="Voltar a Primeira Questão" onPress={() => {navigation.navigate('Pergunta 01', checked)}}/> */}
         </View>
 
     )
@@ -44,6 +79,8 @@ const styles = StyleSheet.create({
         fontWeight: 700
     },
     button: {
-        marginTop: '90px'
+        marginTop: '90px',
+        marginBottom: 39
+
     }
 })
