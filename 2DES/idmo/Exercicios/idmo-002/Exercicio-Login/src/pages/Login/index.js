@@ -7,14 +7,12 @@ import { createPortal } from 'react-dom';
 import buttonLogin from '../../components/btnLogin/index';
 const users = [
     {
-        "id": 1,
-        "email": "user01@empresa.com",
-        "senha": "teste1234",
+        "email":"fulano@gmail.com",
+        "senha":"umdoistresquatro",
     },
     {
-        "id": 2,
-        "email": "user02@empresa.com",
-        "senha": "1234teste",
+        "email":"beltrano@ig.com.br",
+        "senha":"s3nh4",
     }
 ]
 export default function Login({ navigation }) {
