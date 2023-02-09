@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body onload="carregar()">
+
+    <div id="container">
+
+        <header>
+
+            <div class="nav-head">
+
+                <div>
+                    <h1><i class='bx bxs-store' ></i>Lojão do Bão</h1>
+
+                </div>
+                <nav>
+                    <ul>
+                        <li><i class='bx bxs-bell'></i></li>
+                        <li><i class='bx bxs-user'></i></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <div class="menu modal-menu">
+                <!-- <p><i onclick="teste()" class='bx bx-menu'></i></p> -->
+                <p>Menu</p>
+
+                <ul>
+                    <li><a href="#"><i class='bx bxs-home'></i><span class="nav-title">Home</span></a></li>
+                    <li><a href="pages/setores/setores.html"><i class='bx bx-category'></i><span class="nav-title">Setores</span></a></li>
+                    <li><a href="pages/vendedores/vendedores.html"><i class='bx bx-group'></i><span class="nav-title">Vendedores</span></a></li>
+                    <li><a href="pages/mensalidades/mensalidades.html"><i class='bx bx-money'></i><span class="nav-title">Produtos</span></a></li>
+                    <li><a href="pages/mensalidades/mensalidades.html"><i class='bx bx-money'></i><span class="nav-title">Vendas</span></a></li>
+                </ul>
+
+                <p class="section-config">Configurações <i class='bx bx-error-alt'></i></p>                            
+
+                <ul>
+                    <li><i class='bx bx-dollar'></i><span class="nav-title">Precificações <i class='bx bx-error-alt'></i></span></li>
+                    <li><i class='bx bxs-user-detail'></i><span class="nav-title">Usuarios <i class='bx bx-error-alt'></i></span></li>
+                    <li><i class='bx bx-cog'></i><span class="nav-title">Configurações <i class='bx bx-error-alt'></i></span></li>
+                </ul>
+            </div>
+
+            <div class="conteudo">
+                <div class="linha-1">
+                    <i class='bx bx-home'></i>
+
+                    <div class="linha-1-sub">
+                        <h5>HOME</h5>
+                        <p>Seja Muito Bem Vindo <b>Usuario</b></p>
+                    </div>
+                </div>
+
+                <div class="cont-tools">
+
+                    <div class="cont-qtd">
+                        <i class='bx bx-wallet' ></i>
+                        <p>Vendas: <b class="qtd-vendas">1022</b></p>
+                    </div>
+
+                    <div class="cont-qtd">
+                        <i class='bx bx-x disabled' ></i>
+                        <p>Total: <b class="desativados">R$10,00</b></p>
+                    </div>
+
+                    <!-- <div class="cont-qtd">
+                        <i class='bx bx-check right'></i>
+                        <p>Ativados: <b class="ativados"></b></p>
+                    </div> -->
+
+                    <div class="tools">
+                        
+                        <div class="linha-2">
+                            <button class="button-new"><a href="cadastrarCliente/cadastrarCliente.html"><i
+                                        class='bx bxs-file-plus'></i>Novo</a></button>
+                        </div>
+
+                        <div class="filtro">
+                            <input placeholder="Pesquisar Cliente" class="search" type="text">
+                            <!-- <button class="">Filtrar</button> -->
+                            <i class='bx bx-search-alt-2 btn-filter'></i>
+                        </div>
+
+                    </div>
+    
+                </div>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Vendedor</th>
+                            <th>Data</th>
+                            <th>Quantidade</th>
+                            <th>Valor</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+
+
+                    <tbody class="contVendas">
+                        <tr class="vendas" style="display: none;">
+                            <td class="idVenda">1</td>
+                            <td class="idVendedor">Luiz Fernando</td>
+                            <td class="data">09/02/2023</td>
+                            <td class="quantidade">R$270,00</td>
+                            <td class="valor">R$270,00</td>
+                            <td>
+                                <i class='bx bx-edit' onclick="editarCliente(this)"></i>
+                                <i class='bx bxs-trash-alt' onclick="excluirCliente(this)"></i>
+                            </td>
+                        </tr>
+
+
+                    </tbody>
+                </table>
+            </div>
+
+        </main> 
+
+        <!-- <div id="container_sections">
+            <section class="section_setores">
+                <h2>Setores!</h2>
+    
+                <div class="cont_setores">
+    
+                    <div class="setores" style="display: none;">
+
+                        <img class="image_icon_setor" src="https://cdn-icons-png.flaticon.com/512/5787/5787014.png" alt="">                
+
+                        <div>
+                            <p><span class="nome_setor"> Alimenticios</span></p>
+        
+                            <p><span class="numero_setor">02</span></p>
+                        </div>
+        
+                    
+                    </div>
+                    
+                </div>
+            <button class="btn_add_icon">Adicionar Setor</button>            
+            </section>
+    
+            <section class="section_produtos">
+                <h2>Produtos!</h2>
+    
+                <div class="cont_produtos">
+    
+                    <div class="produtos" style="display: none;">
+
+                        <img class="image_icon_setor" src="https://cdn-icons-png.flaticon.com/512/5787/5787014.png" alt="">                
+
+                        <div>
+                            <p><span class="nome_produto"> Alimenticios</span></p>
+        
+                            <p><span class="numero_produto">02</span></p>
+                        </div>
+        
+                    
+                    </div>
+                    
+                </div>
+            
+                <button class="btn_add_icon">Adicionar Produtos</button>            
+           
+       
+            </section>
+        </div> -->
+
+        
+       
+
+    </div>
+    
+</body>
+
+<script src="js/script.js"></script>
+</html>

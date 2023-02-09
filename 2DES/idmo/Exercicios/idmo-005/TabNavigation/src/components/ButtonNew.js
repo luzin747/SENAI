@@ -13,6 +13,8 @@ export default function ButtonNew({focused,size, color}) {
 
 const styles = StyleSheet.create({
     container: {
+        position: '',
+        top: 0,
         width: 50,
         height: 50,
         borderRadius: 30,
