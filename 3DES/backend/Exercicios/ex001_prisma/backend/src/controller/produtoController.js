@@ -26,6 +26,8 @@ const deletar = async (req, res) => {
     res.status(200).json(produto).end();
 }
 
+
+
 module.exports = {
     create,
     read,

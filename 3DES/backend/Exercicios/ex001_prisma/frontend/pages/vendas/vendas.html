@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Setores</title>
+    <title>Vendas</title>
     <link rel="stylesheet" href="css/style.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
@@ -58,7 +58,7 @@
                     <i class='bx bx-home'></i>
 
                     <div class="linha-1-sub">
-                        <h5>Setores</h5>
+                        <h5>Vendas</h5>
                         <p>Seja Muito Bem Vindo <b>Usuario</b></p>
                     </div>
                 </div>
@@ -66,20 +66,20 @@
                 <div class="cont-tools">
 
                     <div class="cont-qtd">
-                        <i class='bx bx-category'></i>
-                        <p>Setores: <b class="qtd-setores">1022</b></p>
+                        <i class='bx bx-wallet' ></i>
+                        <p>Vendas: <b class="qtd-vendas">1022</b></p>
                     </div>
 
-                    <!-- <div class="cont-qtd">
+                    <div class="cont-qtd">
                         <i class='bx bx-x disabled' ></i>
-                        <p>Comissão: <b class="desativados">R$10,00</b></p>
-                    </div> -->
+                        <p>Total: <b class="desativados">R$10,00</b></p>
+                    </div>
 
                     <!-- <div class="cont-qtd">
                         <i class='bx bx-check right'></i>
                         <p>Ativados: <b class="ativados"></b></p>
                     </div> -->
-
+                    
                     <div class="tools">
                         
                         <div class="linha-2">
@@ -88,7 +88,7 @@
                         </div>
 
                         <div class="filtro">
-                            <input placeholder="Pesquisar Cliente" class="search" type="text">
+                            <input placeholder="Pesquisar Vendas" class="search" type="text">
                             <!-- <button class="">Filtrar</button> -->
                             <i class='bx bx-search-alt-2 btn-filter'></i>
                         </div>
@@ -101,18 +101,24 @@
                     <thead>
                         <tr>
                             <th>#</th>
-                            <th>Nome</th>
-                            <th>Comissão</th>
+                            <th>Vendedor</th>
+                            <th>Data</th>
+                            <th>Produto</th>
+                            <th>Quantidade</th>
+                            <th>Valor</th>
                             <th>Ações</th>
                         </tr>
                     </thead>
 
 
-                    <tbody class="contSetores">
-                        <tr class="setores" style="display: none;">
-                            <td class="idSetor">1</td>
-                            <td class="nome">Luiz Fernando</td>
-                            <td class="comissao">09/02/2023</td>
+                    <tbody class="contVendas">
+                        <tr class="vendas" style="display: none;">
+                            <td class="idVenda">1</td>
+                            <td class="idVendedor">Luiz Fernando</td>
+                            <td class="data">09/02/2023</td>
+                            <td class="produto">09/02/2023</td>
+                            <td class="quantidade">R$270,00</td>
+                            <td class="valor">R$270,00</td>
                             <td>
                                 <i class='bx bx-edit' onclick="editarCliente(this)"></i>
                                 <i class='bx bxs-trash-alt' onclick="excluirCliente(this)"></i>
@@ -122,36 +128,50 @@
 
                     </tbody>
                 </table>
-
+                
+                
                 <div class="modal_cadastrar model">
                     <h1>Modal</h1>
-        
+
                     <div class="cont-inputs">
-        
-        
+
                         <div>
-                            <p>Nome</p>
-                            <input type="text" class="nome_produto" name="" id="">
+                            <p>Data</p>
+                            <input type="text" class="data_venda" name="" id="">
                         </div>
-        
+
                         <div>
-                            <p>Comissão</p>
-                            <input type="text" class="valor_produto" name="" id="">
+                            <p>Vendedor</p>
+                            <input type="text" class="vendedor_id">
                         </div>
-        
+
+                        <div>
+                            <!-- <p>Produto</p>
+                            <input type="text" class="id_produto" name="" id=""> -->
+
+                            <select class="select_products" name="" id=""  onclick="conferir()">
+                                <option class="option_products" value="Aberto">Aberto</option>
+                                <option value="Fechado">Fechado</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <p>Quantidade</p>
+                            <input type="text" class="qtd" name="" id="">
+
+                        </div>
+
                     </div>
                     
                     <div>
                         <button onclick="esconderModalCheck()">Cancelar</button>
                         <button onclick="Cadastrar()">Cadastrar</button>
                     </div>
+
                 </div>
             </div>
-            
 
         </main> 
-
-     
 
         <!-- <div id="container_sections">
             <section class="section_setores">

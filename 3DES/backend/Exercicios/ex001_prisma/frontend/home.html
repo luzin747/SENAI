@@ -7,6 +7,8 @@
     <title>Home</title>
     <link rel="stylesheet" href="css/style.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <link rel="stylesheet" href="../main.css">
 </head>
 <body onload="carregar()">
 
@@ -32,14 +34,14 @@
         <main>
             <div class="menu modal-menu">
                 <!-- <p><i onclick="teste()" class='bx bx-menu'></i></p> -->
-                <p>Menu</p>
+                <p>Home</p>
 
                 <ul>
                     <li><a href="#"><i class='bx bxs-home'></i><span class="nav-title">Home</span></a></li>
                     <li><a href="pages/setores/setores.html"><i class='bx bx-category'></i><span class="nav-title">Setores</span></a></li>
                     <li><a href="pages/vendedores/vendedores.html"><i class='bx bx-group'></i><span class="nav-title">Vendedores</span></a></li>
-                    <li><a href="pages/mensalidades/mensalidades.html"><i class='bx bx-money'></i><span class="nav-title">Produtos</span></a></li>
-                    <li><a href="pages/mensalidades/mensalidades.html"><i class='bx bx-money'></i><span class="nav-title">Vendas</span></a></li>
+                    <li><a href="pages/produtos/produtos.html"><i class='bx bx-money'></i><span class="nav-title">Produtos</span></a></li>
+                    <li><a href="pages/vendas/vendas.html"><i class='bx bx-money'></i><span class="nav-title">Vendas</span></a></li>
                 </ul>
 
                 <p class="section-config">Configurações <i class='bx bx-error-alt'></i></p>                            
@@ -56,7 +58,7 @@
                     <i class='bx bx-home'></i>
 
                     <div class="linha-1-sub">
-                        <h5>HOME</h5>
+                        <h5>Home</h5>
                         <p>Seja Muito Bem Vindo <b>Usuario</b></p>
                     </div>
                 </div>
@@ -77,16 +79,11 @@
                         <i class='bx bx-check right'></i>
                         <p>Ativados: <b class="ativados"></b></p>
                     </div> -->
-
+                    
                     <div class="tools">
                         
-                        <div class="linha-2">
-                            <button class="button-new"><a href="cadastrarCliente/cadastrarCliente.html"><i
-                                        class='bx bxs-file-plus'></i>Novo</a></button>
-                        </div>
-
                         <div class="filtro">
-                            <input placeholder="Pesquisar Cliente" class="search" type="text">
+                            <input placeholder="Pesquisar Vendas" class="search" type="text">
                             <!-- <button class="">Filtrar</button> -->
                             <i class='bx bx-search-alt-2 btn-filter'></i>
                         </div>
@@ -101,6 +98,7 @@
                             <th>#</th>
                             <th>Vendedor</th>
                             <th>Data</th>
+                            <th>Produto</th>
                             <th>Quantidade</th>
                             <th>Valor</th>
                             <th>Ações</th>
@@ -113,6 +111,7 @@
                             <td class="idVenda">1</td>
                             <td class="idVendedor">Luiz Fernando</td>
                             <td class="data">09/02/2023</td>
+                            <td class="produto">09/02/2023</td>
                             <td class="quantidade">R$270,00</td>
                             <td class="valor">R$270,00</td>
                             <td>
@@ -124,6 +123,42 @@
 
                     </tbody>
                 </table>
+                
+                
+                <div class="modal_cadastrar model">
+                    <h1>Modal</h1>
+
+                    <div class="cont-inputs">
+
+                        <div>
+                            <p>Data</p>
+                            <input type="text" class="data_venda" name="" id="">
+                        </div>
+
+                        <div>
+                            <p>Vendedor</p>
+                            <input type="text" class="vendedor_id">
+                        </div>
+
+                        <div>
+                            <p>Produto</p>
+                            <input type="text" class="id_produto" name="" id="">
+                        </div>
+
+                        <div>
+                            <p>Quantidade</p>
+                            <input type="text" class="qtd" name="" id="">
+
+                        </div>
+
+                    </div>
+                    
+                    <div>
+                        <button onclick="esconderModalCheck()">Cancelar</button>
+                        <button onclick="Cadastrar()">Cadastrar</button>
+                    </div>
+
+                </div>
             </div>
 
         </main> 

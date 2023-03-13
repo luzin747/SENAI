@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,7 +8,9 @@
     <title>Produtos</title>
     <link rel="stylesheet" href="css/style.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../main.css">
 </head>
+
 <body onload="carregar()">
 
     <div id="container">
@@ -17,7 +20,7 @@
             <div class="nav-head">
 
                 <div>
-                    <h1><i class='bx bxs-store' ></i>Lojão do Bão</h1>
+                    <h1><i class='bx bxs-store'></i>Lojão do Bão</h1>
 
                 </div>
                 <nav>
@@ -36,18 +39,21 @@
 
                 <ul>
                     <li><a href="../../home.html"><i class='bx bxs-home'></i><span class="nav-title">Home</span></a></li>
-                    <li><a href="#"><i class='bx bx-category'></i><span class="nav-title">Setores</span></a></li>
+                    <li><a href="../setores/setores.html"><i class='bx bx-category'></i><span class="nav-title">Setores</span></a></li>
                     <li><a href="../vendedores/vendedores.html"><i class='bx bx-group'></i><span class="nav-title">Vendedores</span></a></li>
-                    <li><a href="pages/mensalidades/mensalidades.html"><i class='bx bx-money'></i><span class="nav-title">Produtos</span></a></li>
-                    <li><a href="pages/mensalidades/mensalidades.html"><i class='bx bx-money'></i><span class="nav-title">Vendas</span></a></li>
+                    <li><a href="../produtos/produtos.html"><i class='bx bx-money'></i><span class="nav-title">Produtos</span></a></li>
+                    <li><a href="../vendas/vendas.html"><i class='bx bx-money'></i><span class="nav-title">Vendas</span></a></li>
                 </ul>
 
-                <p class="section-config">Configurações <i class='bx bx-error-alt'></i></p>                            
+                <p class="section-config">Configurações <i class='bx bx-error-alt'></i></p>
 
                 <ul>
-                    <li><i class='bx bx-dollar'></i><span class="nav-title">Precificações <i class='bx bx-error-alt'></i></span></li>
-                    <li><i class='bx bxs-user-detail'></i><span class="nav-title">Usuarios <i class='bx bx-error-alt'></i></span></li>
-                    <li><i class='bx bx-cog'></i><span class="nav-title">Configurações <i class='bx bx-error-alt'></i></span></li>
+                    <li><i class='bx bx-dollar'></i><span class="nav-title">Precificações <i
+                                class='bx bx-error-alt'></i></span></li>
+                    <li><i class='bx bxs-user-detail'></i><span class="nav-title">Usuarios <i
+                                class='bx bx-error-alt'></i></span></li>
+                    <li><i class='bx bx-cog'></i><span class="nav-title">Configurações <i
+                                class='bx bx-error-alt'></i></span></li>
                 </ul>
             </div>
 
@@ -65,13 +71,13 @@
 
                     <div class="cont-qtd">
                         <i class='bx bx-category'></i>
-                        <p>Setores: <b class="qtd-setores">1022</b></p>
+                        <p>Produtos: <b class="qtd-produto">1022</b></p>
                     </div>
 
                     <div class="tools">
-                        
+
                         <div class="linha-2">
-                            <button class="button-new"><a href="cadastrarCliente/cadastrarCliente.html"><i
+                            <button class="button-new" onclick="MostrarModalCadastrar()"><i
                                         class='bx bxs-file-plus'></i>Novo</a></button>
                         </div>
 
@@ -82,54 +88,87 @@
                         </div>
 
                     </div>
-    
+
                 </div>
 
-                <!-- <table>
+                <table>
                     <thead>
                         <tr>
                             <th>#</th>
                             <th>Nome</th>
-                            <th>Comissão</th>
+                            <th>Valor</th>
+                            <th>Setor do Produto</th>
                             <th>Ações</th>
                         </tr>
                     </thead>
 
-
-                    <!-- <tbody class="contSetores">
-                        <tr class="setores" style="display: none;">
-                            <td class="idSetor">1</td>
+                     <tbody class="contProdutos">
+                        <tr class="produtos" style="display: none;">
+                            <td class="idProduto">1</td>
                             <td class="nome">Luiz Fernando</td>
-                            <td class="comissao">09/02/2023</td>
+                            <td class="valor">09/02/2023</td>
+                            <td class="setorProduto">09/02/2023</td>
                             <td>
                                 <i class='bx bx-edit' onclick="editarCliente(this)"></i>
                                 <i class='bx bxs-trash-alt' onclick="excluirCliente(this)"></i>
                             </td>
                         </tr>
 
+                    </tbody>
+
+                <!--</table> -->
+
+               
+
+                <!-- <div class="produtos_category">
+
+                    <div class="produtos">
+                        <img src="img/icon_higiene_cartoon.png" alt="">
+                        <h1>Higiene</h1>
+                    </div>
+
+                    <div class="produtos">
+                        <img src="https://cdn-icons-png.flaticon.com/512/1888/1888768.png" alt="">
+                        <h1>Doces</h1>
+                    </div>
+
+                </div> -->
+
+                 <div class="modal_cadastrar model">
+                    <h1>Modal</h1>
+
+                    <div class="cont-inputs">
 
 
-                    </tbody> -->
+                        <div>
+                            <p>Nome</p>
+                            <input type="text" class="nome_produto" name="" id="">
+                        </div>
 
-               <!--</table> -->
+                        <div>
+                            <p>Valor</p>
+                            <input type="text" class="valor_produto" name="" id="">
+                        </div>
 
-                   
-               <div class="produtos_category">
+                         <div>
+                            <p>Setor</p>
+                            <input type="text" class="setor_produto" name="" id="">
+                        </div>
 
-                <div class="produtos">
-                    <img src="img/icon_higiene_cartoon.png" alt="">
-                    <h1>Higiene</h1>
+                    
+                    </div>
+                    
+                    <div>
+                        <button onclick="esconderModalCheck()">Cancelar</button>
+                        <button onclick="Cadastrar()">Cadastrar</button>
+                    </div>
                 </div>
-
-                <div class="produtos">
-                    <img src="https://cdn-icons-png.flaticon.com/512/1888/1888768.png" alt="">
-                    <h1>Doces</h1>
-                </div>
-
-            </div>
             </div>
 
-        </main> 
+
+
+        </main>
+
 
         <!-- <div id="container_sections">
             <section class="section_setores">
@@ -180,12 +219,13 @@
             </section>
         </div> -->
 
-        
-       
+
+
 
     </div>
-    
+
 </body>
 
 <script src="js/script.js"></script>
+
 </html>

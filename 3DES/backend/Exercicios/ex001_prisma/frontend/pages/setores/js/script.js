@@ -54,6 +54,55 @@ function preencherSetores() {
 
 }
 
+function Cadastrar() {
+    var nome = document.querySelector('.nome_produto').value
+    var valor = document.querySelector('.valor_produto').value
+
+    var data = {
+        "nome": nome,
+        "comissao": Number(valor),
+    }
+
+    console.log(data);
+
+
+    fetch(urlSetor, {
+        "method": "POST",
+        "headers": {
+            "Content-Type": "application/json"
+        },
+        "body": JSON.stringify(data)
+    })
+
+        .then(res => { 
+            console.log(res.status)
+            //return res.json() 
+            
+            if(res.status == 200) {
+                alert('Cadastrado')
+                esconderModalCheck();
+            }
+
+            if(res == err) {
+                
+            }
+        })
+}
+
+function MostrarModalCadastrar() {
+    var modalCerto = document.querySelector('.modal_cadastrar')
+
+    modalCerto.classList.remove('model')
+}
+
+function esconderModalCheck() {
+    var modalCerto = document.querySelector('.modal_cadastrar')
+
+    modalCerto.classList.add('model')
+
+    window.location.reload();
+}
+
 // function preencherProdutos() {
 
 //     produtos.forEach(p => {

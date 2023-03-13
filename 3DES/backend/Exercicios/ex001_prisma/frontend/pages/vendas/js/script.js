@@ -105,6 +105,11 @@ function preencherVendas() {
 
             })
 
+            // 
+
+            // })
+
+
             novoCardSetor.querySelector('.quantidade').innerHTML = quatidadeTotal
 
             document.querySelector('.contVendas').appendChild(novoCardSetor)

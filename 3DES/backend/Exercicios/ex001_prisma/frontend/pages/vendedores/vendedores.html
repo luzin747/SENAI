@@ -7,6 +7,7 @@
     <title>Vendedores</title>
     <link rel="stylesheet" href="css/style.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../main.css">
 </head>
 <body onload="carregar()">
 
@@ -37,9 +38,9 @@
                 <ul>
                     <li><a href="../../home.html"><i class='bx bxs-home'></i><span class="nav-title">Home</span></a></li>
                     <li><a href="../setores/setores.html"><i class='bx bx-category'></i><span class="nav-title">Setores</span></a></li>
-                    <li><a href="#"><i class='bx bx-group'></i><span class="nav-title">Vendedores</span></a></li>
-                    <li><a href="pages/mensalidades/mensalidades.html"><i class='bx bx-money'></i><span class="nav-title">Produtos</span></a></li>
-                    <li><a href="pages/mensalidades/mensalidades.html"><i class='bx bx-money'></i><span class="nav-title">Vendas</span></a></li>
+                    <li><a href="../vendedores/vendedores.html"><i class='bx bx-group'></i><span class="nav-title">Vendedores</span></a></li>
+                    <li><a href="../produtos/produtos.html"><i class='bx bx-money'></i><span class="nav-title">Produtos</span></a></li>
+                    <li><a href="../vendas/vendas.html"><i class='bx bx-money'></i><span class="nav-title">Vendas</span></a></li>
                 </ul>
 
                 <p class="section-config">Configurações <i class='bx bx-error-alt'></i></p>                            
@@ -81,7 +82,7 @@
                     <div class="tools">
                         
                         <div class="linha-2">
-                            <button class="button-new"><a href="cadastrarCliente/cadastrarCliente.html"><i
+                            <button class="button-new" onclick="MostrarModalCadastrar()"><i
                                         class='bx bxs-file-plus'></i>Novo</a></button>
                         </div>
 
@@ -123,9 +124,42 @@
 
                     </tbody>
                 </table>
+
+                <div class="modal_cadastrar model">
+                    <h1>Modal</h1>
+        
+                    <div class="cont-inputs">
+        
+        
+                        <div>
+                            <p>Nome</p>
+                            <input type="text" class="nome_produto" name="" id="">
+                        </div>
+        
+                        <div>
+                            <p>Salario</p>
+                            <input type="text" class="salario_vendedor" name="" id="">
+                        </div>
+        
+                        <div>
+        
+                            <p>Setor</p>
+                            <input type="text" class="setor_produto" name="" id="">
+                        </div>
+        
+                    </div>
+                    
+                    <div>
+                        <button onclick="esconderModalCheck()">Cancelar</button>
+                        <button onclick="Cadastrar()">Cadastrar</button>
+                    </div>
+                </div>
             </div>
 
         </main> 
+
+
+       
 
         <!-- <div id="container_sections">
             <section class="section_setores">

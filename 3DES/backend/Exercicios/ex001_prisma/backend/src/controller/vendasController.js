@@ -79,11 +79,18 @@ const readOneVendas = async (req, res) => {
     res.status(200).json(vendas).end();
 }
 
+const deletar = async(req,res) => {
+    let detalhes = await prisma.detalhes.delete({
+        data: req.params
+    });
+}
+
 module.exports = {
     create,
     read,
     readOne,
     createMany,
     createDetalhesVendas,
-    readOneVendas
+    readOneVendas,
+    deletar
 }

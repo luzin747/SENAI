@@ -28,4 +28,4 @@ router.get('/vendas/:id_venda', Vendas.readOneVendas);
 router.post('/vendas/detalhes', Vendas.createDetalhesVendas);
 
 
-module.exports = router;
+    module.exports = router;

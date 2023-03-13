@@ -1,59 +1,109 @@
-var urlSetor = 'http://localhost:3000/setor'
 var urlProdutos = 'http://localhost:3000/produto'
 
-var setores = []
+var produtos = []
 
-var cardSetor = document.querySelector('.setores')
+var cardProduto = document.querySelector('.produtos')
 
 function carregar() {
     const options = { method: 'GET' };
 
-    fetch(urlSetor, options)
+    fetch(urlProdutos, options)
         .then(res => res.json())
         .then(res => {
-            setores = res;
-            preencherSetores();
+            produtos = res;
+            preencherProdutos();
         }
         )
         .catch(err => console.error(err));
 
+}
+
+var quatidadeTotal = 0
+
+function preencherProdutos() {
+    var salarioTotal = 0
+
+    document.querySelector('.qtd-produto').innerHTML = produtos.length
+
+    produtos.forEach(p => {
+
+
+        var novoCardProduto = cardProduto.cloneNode(true)
+
+        novoCardProduto.style.display = 'table-row'
+
+        novoCardProduto.querySelector('.idProduto').innerHTML = p.id_produto
+        novoCardProduto.querySelector('.nome').innerHTML = p.nome
+        novoCardProduto.querySelector('.valor').innerHTML = 'R$' + p.valor
+        novoCardProduto.querySelector('.setorProduto').innerHTML = p.setor_produto
+
+        // salarioTotal += v.salario
+
+        // v.detalhes.forEach(vd => {
+
+        //     quatidadeTotal = quatidadeTotal + vd.quantidade
+
+        // })
+
+        // novoCardProduto.querySelector('.quantidade').innerHTML = quatidadeTotal
+
+        document.querySelector('.contProdutos').appendChild(novoCardProduto)
+    })
+
+    // document.querySelector('.desativados').innerHTML = 'R$' + salarioTotal + ',00'
 
 }
 
-var quatidadeTotal = 0 
+function Cadastrar() {
+    var nome = document.querySelector('.nome_produto').value
+    var valor = document.querySelector('.valor_produto').value
+    var setor = document.querySelector('.setor_produto').value
 
-function preencherSetores() {
-    var salarioTotal = 0 
+    var data = {
+        "nome": nome,
+        "valor": Number(valor),
+        "setor_produto": Number(setor),
+    }
 
-    document.querySelector('.qtd-setores').innerHTML = setores.length
+    console.log(data);
 
-    setores.forEach(s => {
 
-            var novoCardSetor = cardSetor.cloneNode(true)
+    fetch(urlProdutos, {
+        "method": "POST",
+        "headers": {
+            "Content-Type": "application/json"
+        },
+        "body": JSON.stringify(data)
+    })
 
-            novoCardSetor.style.display = 'table-row'
+        .then(res => { 
+            console.log(res.status)
+            //return res.json() 
+            
+            if(res.status == 200) {
+                alert('Cadastrado')
+                esconderModalCheck();
+            }
 
-            novoCardSetor.querySelector('.idSetor').innerHTML = s.id
-            novoCardSetor.querySelector('.nome').innerHTML = s.nome
-            novoCardSetor.querySelector('.comissao').innerHTML =  s.comissao + '%'
-
-            // salarioTotal += v.salario
-
-            // v.detalhes.forEach(vd => {
-
-            //     quatidadeTotal = quatidadeTotal + vd.quantidade
-
-            // })
-
-            // novoCardSetor.querySelector('.quantidade').innerHTML = quatidadeTotal
-
-            document.querySelector('.contSetores').appendChild(novoCardSetor)
+            if(res == err) {
+                
+            }
         })
-
-        // document.querySelector('.desativados').innerHTML = 'R$' + salarioTotal + ',00'
-
 }
 
+function MostrarModalCadastrar() {
+    var modalCerto = document.querySelector('.modal_cadastrar')
+
+    modalCerto.classList.remove('model')
+}
+
+function esconderModalCheck() {
+    var modalCerto = document.querySelector('.modal_cadastrar')
+
+    modalCerto.classList.add('model')
+
+    window.location.reload();
+}
 // function preencherProdutos() {
 
 //     produtos.forEach(p => {
